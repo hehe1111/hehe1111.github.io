@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="Javascript," />
+  <meta name="keywords" content="移动端适配方案," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="call() 和 apply() 和 bind() 都可以用来指定函数内部 this 的指向，这三个方法的第一个参数都是 this 要指向的对象，如果不传入第一个参数或是第一个参数是 null 或 undefined，则 this 会指向全局对象。 call() 和 apply() 都会立即执行，bind() 只是返回一个具有固定 this 值的函数，可以在需要时再调用该函数。 bind() 每">
-<meta name="keywords" content="Javascript">
+<meta name="description" content="页面在移动端的一些适配方案">
+<meta name="keywords" content="移动端适配方案">
 <meta property="og:type" content="article">
-<meta property="og:title" content="绑定this">
-<meta property="og:url" content="http://yoursite.com/2018/03/14/绑定this/index.html">
+<meta property="og:title" content="移动端适配方案参考">
+<meta property="og:url" content="http://yoursite.com/2018/03/14/移动端适配方案参考/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="call() 和 apply() 和 bind() 都可以用来指定函数内部 this 的指向，这三个方法的第一个参数都是 this 要指向的对象，如果不传入第一个参数或是第一个参数是 null 或 undefined，则 this 会指向全局对象。 call() 和 apply() 都会立即执行，bind() 只是返回一个具有固定 this 值的函数，可以在需要时再调用该函数。 bind() 每">
+<meta property="og:description" content="页面在移动端的一些适配方案">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-14T07:51:30.248Z">
+<meta property="og:updated_time" content="2018-03-14T14:07:48.254Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="绑定this">
-<meta name="twitter:description" content="call() 和 apply() 和 bind() 都可以用来指定函数内部 this 的指向，这三个方法的第一个参数都是 this 要指向的对象，如果不传入第一个参数或是第一个参数是 null 或 undefined，则 this 会指向全局对象。 call() 和 apply() 都会立即执行，bind() 只是返回一个具有固定 this 值的函数，可以在需要时再调用该函数。 bind() 每">
+<meta name="twitter:title" content="移动端适配方案参考">
+<meta name="twitter:description" content="页面在移动端的一些适配方案">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/14/绑定this/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/14/移动端适配方案参考/"/>
 
 
 
 
 
-  <title>绑定this | chen - Hexo Blog</title>
+  <title>移动端适配方案参考 | chen - Hexo Blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/绑定this/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/移动端适配方案参考/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chen">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">绑定this</h1>
+          <h1 class="post-title" itemprop="name headline">移动端适配方案参考</h1>
         
 
         <div class="post-meta">
@@ -292,7 +292,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T07:33:07+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T22:01:28+08:00">
                 2018-03-14
               </time>
             
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Javascript/" itemprop="url" rel="index">
-                    <span itemprop="name">Javascript</span>
+                  <a href="/categories/移动端/" itemprop="url" rel="index">
+                    <span itemprop="name">移动端</span>
                   </a>
                 </span>
 
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  341
+                  588
                 </span>
               
 
@@ -358,6 +358,10 @@
             </div>
           
 
+          
+              <div class="post-description">
+                  页面在移动端的一些适配方案
+              </div>
           
 
         </div>
@@ -373,17 +377,27 @@
       
 
       
-        <ul>
-<li><code>call()</code> 和 <code>apply()</code> 和 <code>bind()</code> 都可以用来指定函数内部 <code>this</code> 的指向，这三个方法的第一个参数都是 <code>this</code> 要指向的对象，如果不传入第一个参数或是第一个参数是 <code>null</code> 或 <code>undefined</code>，则 <code>this</code> 会指向全局对象。</li>
-<li><code>call()</code> 和 <code>apply()</code> 都会立即执行，<code>bind()</code> 只是返回一个具有固定 this 值的函数，可以在需要时再调用该函数。</li>
-<li><code>bind()</code> 每运行一次，就会返回一个新函数。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line">fn1.call() === <span class="built_in">window</span>           <span class="comment">// true</span></span><br><span class="line">fn1.call(<span class="literal">null</span>) === <span class="built_in">window</span>       <span class="comment">// true</span></span><br><span class="line">fn1.call(<span class="literal">undefined</span>) === <span class="built_in">window</span>  <span class="comment">// true</span></span><br><span class="line">fn1.call(obj) === obj           <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">fn1.apply() === <span class="built_in">window</span>          <span class="comment">// true</span></span><br><span class="line">fn1.apply(<span class="literal">null</span>) === <span class="built_in">window</span>      <span class="comment">// true</span></span><br><span class="line">fn1.apply(<span class="literal">undefined</span>) === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">fn1.apply(obj) === obj          <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> temp1 = fn1.bind()</span><br><span class="line"><span class="keyword">var</span> temp2 = fn1.bind()</span><br><span class="line"><span class="keyword">var</span> temp3 = fn1.bind(<span class="literal">null</span>)</span><br><span class="line"><span class="keyword">var</span> temp4 = fn1.bind(<span class="literal">undefined</span>)</span><br><span class="line"><span class="keyword">var</span> temp5 = fn1.bind(obj)</span><br><span class="line">temp1 === temp2    <span class="comment">// false </span></span><br><span class="line">temp1() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp2() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp3() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp4() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp5() === obj    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+        <h2 id="在-lt-head-gt-标签中，引入以下-lt-meta-gt-标签"><a href="#在-lt-head-gt-标签中，引入以下-lt-meta-gt-标签" class="headerlink" title="在 &lt;head&gt; 标签中，引入以下 &lt;meta&gt; 标签"></a>在 <code>&lt;head&gt;</code> 标签中，引入以下 <code>&lt;meta&gt;</code> 标签</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>该 <code>&lt;meta&gt;</code> 标签用于将</p>
 <ul>
-<li><code>call()</code> / <code>bind()</code> 的参数从第二个开始，都是一个一个传进去的；<code>apply()</code> 的第二个参数则必须是一个数组，数组中的元素会依次传进函数里。</li>
-<li><code>bind()</code> 可以用于为原函数的参数绑定默认值。</li>
+<li>页面宽度调整为用户设备宽度（<code>width=device-width</code>）</li>
+<li>禁止用户手动缩放（<code>user-scalable=no</code>）</li>
+<li>初始页面缩放比例、最大、最小页面缩放比例均为 1，即<strong>不缩放</strong>。</li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">x, y</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x + y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn2.call(<span class="literal">null</span>, <span class="number">1</span>, <span class="number">2</span>)        <span class="comment">// 3</span></span><br><span class="line">fn2.apply(<span class="literal">null</span>, [<span class="number">1</span>, <span class="number">2</span>])     <span class="comment">// 3</span></span><br><span class="line"><span class="keyword">var</span> temp = fn2.bind(<span class="literal">null</span>, <span class="number">1</span>)</span><br><span class="line">temp(<span class="number">2</span>)                     <span class="comment">// 3</span></span><br><span class="line">temp(<span class="number">5</span>)                     <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+<h2 id="media-query-媒体查询"><a href="#media-query-媒体查询" class="headerlink" title="media query - 媒体查询"></a>media query - 媒体查询</h2><p>媒体查询能够根据用户设备屏幕的尺寸或者保持在横向或者纵向的模式时，提供不同的样式，从而可以实现在不改变内容的前提下，呈现不同的表现风格，使页面保持美观。</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- link 元素中的 CSS 媒体查询 --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 应用不到的样式表依然会被下载 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(max-width: 320px)"</span> <span class="attr">href</span>=<span class="string">"mobile-small.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(min-width: 321px) and (max-width: 375px)"</span> <span class="attr">href</span>=<span class="string">"mobile-medium.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(min-width: 376px) and (max-width: 425px)"</span> <span class="attr">href</span>=<span class="string">"mobile-large.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(min-width: 426px) and (max-width: 768px)"</span> <span class="attr">href</span>=<span class="string">"tablet.css"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">link</span> <span class="attr">rel</span>=<span class="string">"stylesheet"</span> <span class="attr">media</span>=<span class="string">"(min-width: 769px)"</span> <span class="attr">href</span>=<span class="string">"laptop.css"</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&lt;!-- 样式表中的 CSS 媒体查询 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">@media (max-width: 320px) &#123;</span></span><br><span class="line"><span class="undefined">  /* Styles */</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined">@media only screen and (min-width : 321px) and (max-width : 425px) &#123;</span></span><br><span class="line"><span class="undefined">  /* Styles */</span></span><br><span class="line"><span class="undefined">&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h2 id="动态-rem-方案"><a href="#动态-rem-方案" class="headerlink" title="动态 rem 方案"></a>动态 rem 方案</h2><h3 id="rem的作用"><a href="#rem的作用" class="headerlink" title="rem的作用"></a><code>rem</code>的作用</h3><ul>
+<li>rem 作用于<strong>非</strong>根元素时，相对于根元素字体大小；  </li>
+<li>rem 作用于<strong>根元素的 <code>font-size</code> 属性</strong>时，相对于初始字体大小（浏览器默认字体大小，通常是 16px，chrome 是 12px）</li>
+<li>rem 布局的本质是<strong>等比</strong>缩放</li>
+</ul>
+<h3 id="使用-JS-动态调整-rem"><a href="#使用-JS-动态调整-rem" class="headerlink" title="使用 JS 动态调整 rem"></a>使用 JS 动态调整 rem</h3><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">meta</span> <span class="attr">name</span>=<span class="string">"viewport"</span> <span class="attr">content</span>=<span class="string">"width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    document.documentElement.style.fontSize = document.documentElement.clientWidth / 100 + 'px';</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 在 css 中使用，举例如下 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">    div &#123;width: 10rem&#125;</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<h3 id="使用-SCSS：在-SCSS-里使用-PX2REM"><a href="#使用-SCSS：在-SCSS-里使用-PX2REM" class="headerlink" title="使用 SCSS：在 SCSS 里使用 PX2REM"></a>使用 SCSS：在 SCSS 里使用 PX2REM</h3><p>相比上一个方案的优点：可以不用自己计算 rem 值，直接写 px 值即可。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在 scss 文件里写上如下内容 */</span></span><br><span class="line">@function px(<span class="variable">$px</span>)&#123;</span><br><span class="line">    @return <span class="variable">$px</span>/<span class="variable">$designWidth</span>*<span class="number">10</span> + rem;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="variable">$designWidth</span>: <span class="number">640</span>; <span class="comment">// 640 是设计稿的宽度，根据需要更改</span></span><br></pre></td></tr></table></figure>
+<p>定义好的 px  函数会将传进去的 px 值转成 rem 值。</p>
+<figure class="highlight scss"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- 在 scss 中使用，举例如下 --&gt;</span><br><span class="line"><span class="selector-class">.child</span>&#123;</span><br><span class="line">  <span class="attribute">width</span>: px(<span class="number">320</span>); <span class="comment">// 5rem</span></span><br><span class="line">  <span class="comment">/* 其他样式 */</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>之后将 scss 文件转成 css 文件，再在 HTML 页面引入 css 文件即可。</p>
 
       
     </div>
@@ -412,7 +426,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/Javascript/" rel="tag"><i class="fa fa-tag"></i> Javascript</a>
+            <a href="/tags/移动端适配方案/" rel="tag"><i class="fa fa-tag"></i> 移动端适配方案</a>
           
         </div>
       
@@ -425,8 +439,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/15/为博客配置一些小功能/" rel="next" title="为博客配置一些小功能">
-                <i class="fa fa-chevron-left"></i> 为博客配置一些小功能
+              <a href="/2018/03/14/开启阅读全文按钮功能/" rel="next" title="开启阅读全文按钮功能">
+                <i class="fa fa-chevron-left"></i> 开启阅读全文按钮功能
               </a>
             
           </div>
@@ -434,10 +448,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/14/创建分类页面/" rel="prev" title="创建分类页面">
-                创建分类页面 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -489,8 +499,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -590,6 +609,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#在-lt-head-gt-标签中，引入以下-lt-meta-gt-标签"><span class="nav-number">1.</span> <span class="nav-text">在 &lt;head&gt; 标签中，引入以下 &lt;meta&gt; 标签</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#media-query-媒体查询"><span class="nav-number">2.</span> <span class="nav-text">media query - 媒体查询</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#动态-rem-方案"><span class="nav-number">3.</span> <span class="nav-text">动态 rem 方案</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#rem的作用"><span class="nav-number">3.1.</span> <span class="nav-text">rem的作用</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-JS-动态调整-rem"><span class="nav-number">3.2.</span> <span class="nav-text">使用 JS 动态调整 rem</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用-SCSS：在-SCSS-里使用-PX2REM"><span class="nav-number">3.3.</span> <span class="nav-text">使用 SCSS：在 SCSS 里使用 PX2REM</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
