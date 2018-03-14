@@ -386,26 +386,17 @@
       
         
           
-            <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li><p>新建一个页面，命名为 <code>about</code>。打开命令行，进入<strong>博客根目录</strong>。执行命令 </p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new page "about"</span><br></pre></td></tr></table></figure>
-<p> 执行命令后会返回</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Created: C:\FrontEnd\hexo-blog\source\about\index.md</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑主题的 <code>_config.yml</code> ，将 <code>menu</code> 中的 <code># about: /about/ || user</code> 注释去掉，变成如下：</p>
- <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line"><span class="attr">  about:</span> <span class="string">/about/</span> <span class="string">||</span> <span class="string">user</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在命令行界面中，执行</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo s</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在浏览器中，打开 <code>http://localhost:4000/</code> 网址，点击<strong>关于</strong>链接，即可看到关于页面。</p>
-</li>
-</ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://github.com/iissnan/hexo-theme-next/wiki/%E5%88%9B%E5%BB%BA-%22%E5%85%B3%E4%BA%8E%E6%88%91%22-%E9%A1%B5%E9%9D%A2" target="_blank" rel="noopener">创建 “关于我” 页面</a></li>
-</ul>
-
-          
+          步骤
+新建一个页面，命名为 about。打开命令行，进入博客根目录。执行命令 
+ 1$ hexo n
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/14/创建about页面/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -576,30 +567,17 @@
       
         
           
-            <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li><p>新建一个页面，命名为 <code>tags</code>。打开命令行，进入<strong>博客根目录</strong>。执行命令 </p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new page "tags"</span><br></pre></td></tr></table></figure>
-<p> 执行命令后会返回</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Created: C:\FrontEnd\hexo-blog\source\tags\index.md</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>前往上面返回的路径，编辑刚生成生成的 index.md 文件</p>
- <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: All tags</span><br><span class="line">date: 2018-03-14 13:44:51</span><br><span class="line">type: "tags"</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑主题的 <code>_config.yml</code> ，将 <code>menu</code> 中的 <code># tags: /tags/ || tags</code> 注释去掉，变成如下：</p>
- <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line"><span class="attr">  tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在命令行界面中，执行</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo s</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在浏览器中，打开 <code>http://localhost:4000/</code> 网址，点击<strong>标签</strong>链接，即可看到标签云页面。</p>
-</li>
-</ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://github.com/iissnan/hexo-theme-next/wiki/%E5%88%9B%E5%BB%BA%E6%A0%87%E7%AD%BE%E4%BA%91%E9%A1%B5%E9%9D%A2" target="_blank" rel="noopener">创建标签云页面</a></li>
-<li><a href="https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/" target="_blank" rel="noopener">Hexo使用攻略-添加分类及标签</a></li>
-</ul>
-
-          
+          步骤
+新建一个页面，命名为 tags。打开命令行，进入博客根目录。执行命令 
+ 1$ hexo ne
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/14/创建标签云页面/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -770,30 +748,17 @@
       
         
           
-            <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li><p>新建一个页面，命名为 categories 。打开命令行，进入<strong>博客根目录</strong>。执行命令 </p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo new page categories</span><br></pre></td></tr></table></figure>
-<p> 执行命令后会返回</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">INFO  Created: C:\FrontEnd\hexo-blog\source\categories\index.md</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>前往上面返回的路径，编辑刚生成生成的 index.md 文件</p>
- <figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: 分类</span><br><span class="line">date: 2018-03-14 13:06:01</span><br><span class="line">type: "categories"</span><br><span class="line">comments: false</span><br><span class="line">---</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>编辑主题的 <code>_config.yml</code> ，将 <code>menu</code> 中的 <code># categories: /categories/ || th</code> 注释去掉，变成如下：</p>
- <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">menu:</span></span><br><span class="line">  <span class="string">...</span></span><br><span class="line"><span class="attr">  categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在命令行界面中，执行</p>
- <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> hexo s</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>在浏览器中，打开 <code>http://localhost:4000/</code> 网址，点击<strong>分类</strong>链接，即可看到分类页面。</p>
-</li>
-</ol>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://github.com/iissnan/hexo-theme-next/wiki/%E5%88%9B%E5%BB%BA%E5%88%86%E7%B1%BB%E9%A1%B5%E9%9D%A2" target="_blank" rel="noopener">创建分类页面</a></li>
-<li><a href="https://linlif.github.io/2017/05/27/Hexo%E4%BD%BF%E7%94%A8%E6%94%BB%E7%95%A5-%E6%B7%BB%E5%8A%A0%E5%88%86%E7%B1%BB%E5%8F%8A%E6%A0%87%E7%AD%BE/" target="_blank" rel="noopener">Hexo使用攻略-添加分类及标签</a></li>
-</ul>
-
-          
+          步骤
+新建一个页面，命名为 categories 。打开命令行，进入博客根目录。执行命令 
+ 1$ 
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/14/创建分类页面/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -964,19 +929,16 @@
       
         
           
-            <ul>
-<li><code>call()</code> 和 <code>apply()</code> 和 <code>bind()</code> 都可以用来指定函数内部 <code>this</code> 的指向，这三个方法的第一个参数都是 <code>this</code> 要指向的对象，如果不传入第一个参数或是第一个参数是 <code>null</code> 或 <code>undefined</code>，则 <code>this</code> 会指向全局对象。</li>
-<li><code>call()</code> 和 <code>apply()</code> 都会立即执行，<code>bind()</code> 只是返回一个具有固定 this 值的函数，可以在需要时再调用该函数。</li>
-<li><code>bind()</code> 每运行一次，就会返回一个新函数。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line">fn1.call() === <span class="built_in">window</span>           <span class="comment">// true</span></span><br><span class="line">fn1.call(<span class="literal">null</span>) === <span class="built_in">window</span>       <span class="comment">// true</span></span><br><span class="line">fn1.call(<span class="literal">undefined</span>) === <span class="built_in">window</span>  <span class="comment">// true</span></span><br><span class="line">fn1.call(obj) === obj           <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">fn1.apply() === <span class="built_in">window</span>          <span class="comment">// true</span></span><br><span class="line">fn1.apply(<span class="literal">null</span>) === <span class="built_in">window</span>      <span class="comment">// true</span></span><br><span class="line">fn1.apply(<span class="literal">undefined</span>) === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">fn1.apply(obj) === obj          <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> temp1 = fn1.bind()</span><br><span class="line"><span class="keyword">var</span> temp2 = fn1.bind()</span><br><span class="line"><span class="keyword">var</span> temp3 = fn1.bind(<span class="literal">null</span>)</span><br><span class="line"><span class="keyword">var</span> temp4 = fn1.bind(<span class="literal">undefined</span>)</span><br><span class="line"><span class="keyword">var</span> temp5 = fn1.bind(obj)</span><br><span class="line">temp1 === temp2    <span class="comment">// false </span></span><br><span class="line">temp1() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp2() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp3() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp4() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp5() === obj    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>call()</code> / <code>bind()</code> 的参数从第二个开始，都是一个一个传进去的；<code>apply()</code> 的第二个参数则必须是一个数组，数组中的元素会依次传进函数里。</li>
-<li><code>bind()</code> 可以用于为原函数的参数绑定默认值。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">x, y</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x + y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn2.call(<span class="literal">null</span>, <span class="number">1</span>, <span class="number">2</span>)        <span class="comment">// 3</span></span><br><span class="line">fn2.apply(<span class="literal">null</span>, [<span class="number">1</span>, <span class="number">2</span>])     <span class="comment">// 3</span></span><br><span class="line"><span class="keyword">var</span> temp = fn2.bind(<span class="literal">null</span>, <span class="number">1</span>)</span><br><span class="line">temp(<span class="number">2</span>)                     <span class="comment">// 3</span></span><br><span class="line">temp(<span class="number">5</span>)                     <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
-
           
+call() 和 apply() 和 bind() 都可以用来指定函数内部 this 的指向，这三
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/03/14/绑定this/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1147,23 +1109,19 @@
       
         
           
-            <p><a href="https://www.jianshu.com/p/f054333ac9e6" target="_blank" rel="noopener">参考链接</a></p>
-<ol>
-<li>在右上角实现 fork me on github - <a href="https://github.com/blog/273-github-ribbons" target="_blank" rel="noopener">代码来源</a></li>
-<li>在网站底部加上访问量</li>
-<li>网站底部字数统计</li>
-<li>实现统计功能</li>
-<li>侧边栏社交小图标设置 - <a href="https://fontawesome.com/icons" target="_blank" rel="noopener">图标来源</a></li>
-<li>主页文章添加阴影效果</li>
-<li>添加顶部加载条</li>
-<li>文章加密访问</li>
-<li>修改字体大小</li>
-<li>修改文章底部的那个带 #号的标签</li>
-<li>在每篇文章末尾统一添加“本文结束”标记</li>
-</ol>
-<p>通过修改当前主题的 _config.yml 文件中各选项的 true/false，来开启或关闭一些功能<br><figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">footer:</span>  </span><br><span class="line">	<span class="attr">since:</span> <span class="number">2017</span></span><br><span class="line">	<span class="attr">copyright:</span> <span class="string">&amp;copyright;</span> <span class="string">hehe1111</span></span><br><span class="line">	<span class="attr">theme:</span></span><br><span class="line">		<span class="attr">custom_text:</span> <span class="string">Hosted</span> <span class="string">by</span> <span class="string">&lt;a</span> <span class="string">target="_blank"</span> <span class="string">href="https://pages.github.com"&gt;GitHub</span> <span class="string">Pages&lt;/a&gt;</span></span><br><span class="line">	<span class="attr">index_with_subtitle:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="attr">menu:</span></span><br><span class="line">	<span class="attr">tags:</span> <span class="string">/tags/</span> <span class="string">||</span> <span class="string">tags</span></span><br><span class="line">	<span class="attr">categories:</span> <span class="string">/categories/</span> <span class="string">||</span> <span class="string">th</span></span><br></pre></td></tr></table></figure></p>
+          参考链接
 
-          
+在右上角实现 fork me on github - 代码来源
+在网站底部加上访问量
+网
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/02/15/为博客配置一些小功能/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1334,72 +1292,15 @@
       
         
           
-            <p>在已准备好 GitHub 账号 + hexo ，开启了 GitHub Pages 预览功能的情况下，为 GitHub Pages 绑定域名。</p>
-<p>步骤：</p>
-<ol>
-<li><p>在<a href="https://www.namesilo.com/" target="_blank" rel="noopener">https://www.namesilo.com/</a>上购买域名，购买前要先注册账号。</p>
-<ol>
-<li><p>购买完了之后，点击 <code>Manage My Domains</code> 选项</p>
-</li>
-<li><p>勾选域名前的小方框</p>
-<ol>
-<li><p>在 <code>Actions for Selected Domains</code> 一栏选中 <code>Change Nameservers</code> 。将 <code>NameServer 1</code> 的值改为 <code>f1g1ns1.dnspod.net</code> ； <code>NameServer 2</code> 的值改为 <code>f1g1ns2.dnspod.net</code> 。</p>
-</li>
-<li><p>提交。</p>
-</li>
-<li><p>回到“勾选域名前的小方框”这一步，选中后，在 <code>options</code> 一栏里选中一个蓝色小图标（鼠标悬停在其上方会提示“Manage DNS for this domain”）；</p>
-</li>
-<li><p>删除默认的 A 记录和 CNAME 记录。</p>
-</li>
-</ol>
-</li>
-</ol>
-</li>
-<li><p>注册 <a href="https://www.dnspod.cn/" target="_blank" rel="noopener">DNSpod</a>。之后</p>
-<ol>
-<li><p>添加域名。会自动导入域名信息，点击确认即可。</p>
-</li>
-<li><p>把除了记录类型为 NS 之外的记录都删掉。</p>
-</li>
-<li><p>点击左上方的 “添加记录” 绿色按钮。新建三条记录：  </p>
-</li>
-</ol>
-</li>
-</ol>
-<table>
-<thead>
-<tr>
-<th>主机类型</th>
-<th>记录类型</th>
-<th>线路类型</th>
-<th>记录值</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>@</td>
-<td>A</td>
-<td>默认</td>
-<td>192.30.252.153</td>
-</tr>
-<tr>
-<td>@</td>
-<td>A</td>
-<td>默认</td>
-<td>192.30.252.154</td>
-</tr>
-<tr>
-<td>www</td>
-<td>CNAME</td>
-<td>默认</td>
-<td>username.github.io(username 用 github 账户名替换)</td>
-</tr>
-</tbody>
-</table>
-<p>最后，在 <code>hexo/source/</code> 文件夹下新建一个文件，写入在第一步时购买的域名，格式为 xxx.com 或是 xxx.xyz 或是 xxx.me 或是 xxx.info 等。文件名为 CNMAE。</p>
-<p>运行 <code>hexo g -d</code> 命令部署到 Github 上。</p>
-
-          
+          在已准备好 GitHub 账号 + hexo ，开启了 GitHub Pages 预览功能的情况下，
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/11/27/为-GitHub-Pages-绑定域名/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1570,56 +1471,15 @@
       
         
           
-            <h2 id="Bold-vs-Strong"><a href="#Bold-vs-Strong" class="headerlink" title="Bold vs. Strong"></a>Bold vs. Strong</h2><p>在 <a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/strong" target="_blank" rel="noopener">&lt;strong&gt; MDN 英文版</a>中，一开始关于 strong 标签是这么几句话：</p>
-<blockquote>
-<p>The HTML &lt;strong&gt; element gives text strong importance, and is typically displayed in bold.  </p>
-</blockquote>
-<blockquote>
-<p>Perhaps instead of rendering some text as bold you want to render it red, or a different size, or underlined, or whatever. It makes more sense to change the presentational properties of strong than it does bold.</p>
-</blockquote>
-<blockquote>
-<p>It is important to note that &lt;b&gt;&lt;/b&gt; does have other uses, when one wants to draw attention without increasing importance.</p>
-</blockquote>
-<p>所以，strong 标签应该是重在<strong>强调文本的重要性</strong>，只是恰好默认表现为加粗而已，当然也可以通过更改样式来改变该标签的呈现。而 b 标签只是单纯的加粗文本而已，并未强调文本的重要性。</p>
-<p>通过参看<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/strong" target="_blank" rel="noopener">&lt;strong&gt; MDN 中文版</a>辅助理解，英语渣，全英 hold 不住。。。</p>
-<h2 id="Emphasis-vs-Strong"><a href="#Emphasis-vs-Strong" class="headerlink" title="Emphasis vs. Strong"></a>Emphasis vs. Strong</h2><blockquote>
-<p>While Emphasis is used to change the meaning of a sentence (“I <em>love</em> carrots” vs. “I love carrots”), Strong is used to give portions of a sentence added importance (e.g., “Warning! This is very dangerous.”)</p>
-</blockquote>
-<p>所以，em 标签重在改变一个句子的意思（强调 love，而不再只是单纯地陈述一个事实），而 strong 标签重在强调部分句子（“Warning!” 和 “very dangerous”）的重要性。</p>
-<h2 id="col、colgroup-标签"><a href="#col、colgroup-标签" class="headerlink" title="col、colgroup 标签"></a>col、colgroup 标签</h2><p>两者均为空标签，不包含内容，故没有结束标签。</p>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/col" target="_blank" rel="noopener">&lt;col&gt; 标签</a>:</p>
-<blockquote>
-<p>HTML col 元素定义表格中的列，并用于定义所有公共单元格上的公共语义。它通常位于 colgroup 元素内。</p>
-</blockquote>
-<p><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/colgroup" target="_blank" rel="noopener">&lt;colgroup&gt; 标签</a>:</p>
-<blockquote>
-<p>HTML 中的 表格列组（Column Group） 标签用来定义表中的一组列表。</p>
-</blockquote>
-<p><a href="http://www.runoob.com/tags/tag-col.html" target="_blank" rel="noopener">HTML &lt;col&gt; 标签</a>:</p>
-<blockquote>
-<p>&lt;col&gt; 标签规定了 &lt;colgroup&gt; 元素内部的每一列的列属性。通过使用 &lt;col&gt; 标签，可以向整个列应用样式，而不需要重复为每个单元格或每一行设置样式。</p>
-</blockquote>
-<p>参看<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/table#更多例子" target="_blank" rel="noopener">&lt;table&gt; 标签</a>中的示例，用代码了解 &lt;col&gt;、&lt;colgroup&gt; 标签的用法。</p>
-<h2 id="替换与非替换元素"><a href="#替换与非替换元素" class="headerlink" title="替换与非替换元素"></a>替换与非替换元素</h2><blockquote>
-<p>替换元素（replaced element）是指用来替换元素内容的部分并非由文档内容直接表示。–《CSS 权威指南》</p>
-</blockquote>
-<p>也就是说大部分空标签就是替换元素。如：</p>
-<blockquote>
-<p>a 标签，如果 src 属性不指向一个外部内容，那么元素就没有任何意义。input 元素也类似，要由一个单选框、复选框或文本输入框替换。–《CSS 权威指南》</p>
-</blockquote>
-<p>非替换元素（nonreplaced element）：</p>
-<blockquote>
-<p>其内容由用户代理（通常是指一个浏览器）在元素本身生成的框中显示。–《CSS 权威指南》</p>
-</blockquote>
-<p>可参看MDN：<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/Replaced_element" target="_blank" rel="noopener">可替换元素</a></p>
-<h2 id="滑动条："><a href="#滑动条：" class="headerlink" title="滑动条："></a>滑动条：</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"range"</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<blockquote>
-<p>用于输入不精确值控件。如果未指定相应的属性，控件使用如下缺省值：<br>min：0<br>max：100<br>value：min + (max-min)/2，或当 max 小于 min 时使用 min<br>step：1</p>
-</blockquote>
-<p>以上参看自<a href="https://developer.mozilla.org/zh-CN/docs/Web/HTML/Element/Input" target="_blank" rel="noopener">&lt;input&gt; 标签</a></p>
-<p>具体用法可参看<a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/range" target="_blank" rel="noopener">&lt;input type=”range”&gt;</a></p>
-
-          
+          Bold vs. Strong在 &lt;strong&gt; MDN 英文版中，一开始关于 str
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/15/HTML-标签知识补充/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
@@ -1790,16 +1650,19 @@
       
         
           
-            <p>测试正常。</p>
-<p>步骤：</p>
-<ol>
-<li>在 GitHub 新建 blog-generator 仓库</li>
-<li>在 hexo/ 目录下右键 Git Bash Here，运行六个指令</li>
-</ol>
-<hr>
-<p>在 .gitignore 的作用下，只有 scaffolds、source、themes、_config.yml、package.json、README.md 上传到GitHub</p>
+          测试正常。
+步骤：
 
-          
+在 GitHub 新建 blog-generator 仓库
+在 hexo/ 目
+          ...
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2017/10/02/添加blog-generator仓库后的测试/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
     </div>
