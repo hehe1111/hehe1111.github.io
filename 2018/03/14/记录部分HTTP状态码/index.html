@@ -68,7 +68,7 @@
 
 
 
-  <meta name="keywords" content="JavaScript," />
+  <meta name="keywords" content="状态码," />
 
 
 
@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="什么是闭包理解闭包，首先必须理解变量作用域。JavaScript 有两种作用域：全局作用域和函数作用域。函数内部可以直接读取全局变量。但是，函数外部无法读取函数内部声明的变量。在函数内再嵌套一个函数，内层函数就可以访问在外层函数定义的变量，反过来就不行，外层函数无法访问内层函数的变量。这个内层函数 + 内层函数内部能访问到的外部变量的总和就是闭包。简而言之，当函数可以记住并访问所在的词法作用域时，">
-<meta name="keywords" content="JavaScript">
+<meta name="description" content="仅记录一些常用的">
+<meta name="keywords" content="状态码">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包及其作用">
-<meta property="og:url" content="http://yoursite.com/2018/03/14/闭包及其作用/index.html">
+<meta property="og:title" content="记录部分HTTP状态码">
+<meta property="og:url" content="http://yoursite.com/2018/03/14/记录部分HTTP状态码/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="什么是闭包理解闭包，首先必须理解变量作用域。JavaScript 有两种作用域：全局作用域和函数作用域。函数内部可以直接读取全局变量。但是，函数外部无法读取函数内部声明的变量。在函数内再嵌套一个函数，内层函数就可以访问在外层函数定义的变量，反过来就不行，外层函数无法访问内层函数的变量。这个内层函数 + 内层函数内部能访问到的外部变量的总和就是闭包。简而言之，当函数可以记住并访问所在的词法作用域时，">
+<meta property="og:description" content="仅记录一些常用的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-14T14:50:08.713Z">
+<meta property="og:updated_time" content="2018-03-14T14:57:35.265Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包及其作用">
-<meta name="twitter:description" content="什么是闭包理解闭包，首先必须理解变量作用域。JavaScript 有两种作用域：全局作用域和函数作用域。函数内部可以直接读取全局变量。但是，函数外部无法读取函数内部声明的变量。在函数内再嵌套一个函数，内层函数就可以访问在外层函数定义的变量，反过来就不行，外层函数无法访问内层函数的变量。这个内层函数 + 内层函数内部能访问到的外部变量的总和就是闭包。简而言之，当函数可以记住并访问所在的词法作用域时，">
+<meta name="twitter:title" content="记录部分HTTP状态码">
+<meta name="twitter:description" content="仅记录一些常用的">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/14/闭包及其作用/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/14/记录部分HTTP状态码/"/>
 
 
 
 
 
-  <title>闭包及其作用 | chen - Hexo Blog</title>
+  <title>记录部分HTTP状态码 | chen - Hexo Blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/闭包及其作用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/记录部分HTTP状态码/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chen">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闭包及其作用</h1>
+          <h1 class="post-title" itemprop="name headline">记录部分HTTP状态码</h1>
         
 
         <div class="post-meta">
@@ -292,7 +292,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T22:41:53+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T22:53:48+08:00">
                 2018-03-14
               </time>
             
@@ -315,8 +315,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/JavaScript/" itemprop="url" rel="index">
-                    <span itemprop="name">JavaScript</span>
+                  <a href="/categories/HTTP/" itemprop="url" rel="index">
+                    <span itemprop="name">HTTP</span>
                   </a>
                 </span>
 
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  400
+                  1,000
                 </span>
               
 
@@ -358,6 +358,10 @@
             </div>
           
 
+          
+              <div class="post-description">
+                  仅记录一些常用的
+              </div>
           
 
         </div>
@@ -373,17 +377,38 @@
       
 
       
-        <h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>理解闭包，首先必须理解变量作用域。JavaScript 有两种作用域：全局作用域和函数作用域。函数内部可以直接读取全局变量。但是，函数外部无法读取函数内部声明的变量。在函数内再嵌套一个函数，内层函数就可以访问在外层函数定义的变量，反过来就不行，外层函数无法访问内层函数的变量。这个内层函数 + 内层函数内部能访问到的外部变量的总和就是闭包。简而言之，当函数可以记住并访问所在的词法作用域时，就产生了闭包。</p>
-<p>闭包其实是函数作用域嵌套的副产品。</p>
-<h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><ul>
-<li>可以读取函数内部的变量</li>
-<li>让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在</li>
+        <h2 id="1XX-信息性状态码"><a href="#1XX-信息性状态码" class="headerlink" title="1XX - 信息性状态码"></a>1XX - 信息性状态码</h2><ul>
+<li>100 Continue(继续) - 客户端应当继续发送请求。</li>
+<li>101 Switching Protocol(切换协议) - 服务器已经理解了客户端的请求，并将通过 <code>Upgrade</code> 消息头通知客户端采用不同的协议来完成这个请求。</li>
 </ul>
-<p>举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">'这就是闭包'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123; <span class="comment">// fn2 函数可以访问在 fn1 函数里定义的变量 a</span></span><br><span class="line">        <span class="built_in">console</span>.log(a); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp = fn1();</span><br><span class="line">temp(); <span class="comment">// '这就是闭包'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn4</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ++n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp2 = fn3(<span class="number">-1</span>);</span><br><span class="line">temp2(); <span class="comment">// 0</span></span><br><span class="line">temp2(); <span class="comment">// 1</span></span><br><span class="line">temp2(); <span class="comment">// 2</span></span><br><span class="line">temp2(); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 闭包使变量 n 一直存在与内存中，每次 temp2() 调用都是在前一次调用的基础基础上进行计算</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="2XX-成功状态码"><a href="#2XX-成功状态码" class="headerlink" title="2XX - 成功状态码"></a>2XX - 成功状态码</h2><ul>
+<li>200 OK(成功) - 请求成功。成功的意义根据请求所使用的方法不同而不同。</li>
+<li>204 No Content(无内容) - 该响应没有响应内容，只有响应头。用户代理可以根据新的响应头来更新对应资源的缓存信息。一般在只需要从客户端往服务器发送信息，而对客服端不需要发送新信息内容的情况下使用。</li>
+<li>206 Partial Content(部分内容) - 该状态码表示客户端进行了范围请求，而服务器成功执行了这一部分的 GET 请求。响应报文中包含由 Content-Range 指定范围的实体内容。</li>
+</ul>
+<h2 id="3XX-重定向状态码"><a href="#3XX-重定向状态码" class="headerlink" title="3XX - 重定向状态码"></a>3XX - 重定向状态码</h2><ul>
+<li>301 Moved Permanently(永久移动) - 所请求的资源已经被分配了新的 URI，新的 URI 会在响应的 Location: 头字段里找到。</li>
+<li>302 Found(临时移动) - 所请求的资源已经被分配了新的 URI，但这只是临时性质的，资源对应的 URI 将来还可能继续改变。因此客户端在以后访问时还得继续使用该 URI。新的 URI 会在响应的 Location: 头字段里找到。</li>
+<li>303 See Other(查看其他位置) - 所请求的资源存在着另一个 URI，服务器发送该响应用来引导客户端使用 GET 方法访问另外一个 URI。303 与 302 有着相同的功能，但 303 明确表示客户端应当使用 GET 方法获取资源。</li>
+<li>304 Not Modified(未修改) - 所请求的资源距离上次访问并没有变化。客户端可以直接从浏览器缓存里获取该资源。304 虽然被划分在 3XX 类别中，但是和重定向没有关系。</li>
+<li>307 Temporary Redirect(临时重定向) - 307 和 302 有着相同的含义，但是 307 会遵照浏览器标准，不会从 POST 变成 GET。</li>
+</ul>
+<h2 id="4XX-客户端错误状态码"><a href="#4XX-客户端错误状态码" class="headerlink" title="4XX - 客户端错误状态码"></a>4XX - 客户端错误状态码</h2><ul>
+<li>400 Bad Request(错误请求) - 发送的请求中存在语法错误，服务器无法正常读取。需要修改请求的内容后再次发送请求。浏览器会像 200 OK 一样对待该状态码。</li>
+<li>401 Unauthorized(未授权)    - 需要身份验证后才能获取所请求的资源，类似于403错误。不同点是，当浏览器初次接受到 401 响应后，会弹出认证用的对话窗口，只要正确输入帐号密码，验证即可通过。</li>
+<li>403 Forbidden(禁止访问) - 请求资源的访问被服务器拒绝了，服务器端没有必要给出拒绝的详细理由。</li>
+<li>404 Not Found(未找到) - 服务器找不到所请求的资源。</li>
+<li>408    Request Timeout(请求超时) - 客户端没有在服务器预备等待的时间内完成一个请求的发送。这意味着服务器将会切断和客户端的连接。</li>
+<li>410    Gone(已失效) - 所请求的资源已经被删除。</li>
+</ul>
+<h2 id="5XX-服务器错误状态码"><a href="#5XX-服务器错误状态码" class="headerlink" title="5XX - 服务器错误状态码"></a>5XX - 服务器错误状态码</h2><ul>
+<li>500 Internal Server Error(内部服务器错误) - 服务器在执行请求时发生错误，也有可能是 Web 应用存在 bug 或某些临时的故障。</li>
+<li>502 Bad Gateway(网关错误)    - 服务器作为网关且从上游服务器获取到了一个无效的HTTP响应。</li>
+<li>503 Service Unavailable(服务不可用) - 由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是临时的，并且将在一段时间以后恢复。如果能够预计延迟时间，那么响应中可以包含一个 Retry-After: 头用以标明这个延迟时间。</li>
+</ul>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="http://javascript.ruanyifeng.com/grammar/function.html#toc22" target="_blank" rel="noopener">函数 - 闭包</a></li>
-<li><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#you-dont-know-js-scope--closures" target="_blank" rel="noopener">You Don’t Know JS: Scope &amp; Closures</a></li>
-<li>你不知道的 JavaScript · 上卷 - 作用域闭包（Kyle Simpson 著，赵望野 梁杰 译）</li>
+<li>《图解 HTTP》（上野宣 著，于均良 译）</li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/HTTP_response_codes" target="_blank" rel="noopener">HTTP response codes</a></li>
 </ul>
 
       
@@ -413,7 +438,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/JavaScript/" rel="tag"><i class="fa fa-tag"></i> JavaScript</a>
+            <a href="/tags/状态码/" rel="tag"><i class="fa fa-tag"></i> 状态码</a>
           
         </div>
       
@@ -426,8 +451,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/14/CSS3实现圆角矩形和阴影/" rel="next" title="CSS3实现圆角矩形和阴影">
-                <i class="fa fa-chevron-left"></i> CSS3实现圆角矩形和阴影
+              <a href="/2018/03/14/闭包及其作用/" rel="next" title="闭包及其作用">
+                <i class="fa fa-chevron-left"></i> 闭包及其作用
               </a>
             
           </div>
@@ -435,10 +460,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/14/记录部分HTTP状态码/" rel="prev" title="记录部分HTTP状态码">
-                记录部分HTTP状态码 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -610,7 +631,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#什么是闭包"><span class="nav-number">1.</span> <span class="nav-text">什么是闭包</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#闭包的作用"><span class="nav-number">2.</span> <span class="nav-text">闭包的作用</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">3.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1XX-信息性状态码"><span class="nav-number">1.</span> <span class="nav-text">1XX - 信息性状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2XX-成功状态码"><span class="nav-number">2.</span> <span class="nav-text">2XX - 成功状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3XX-重定向状态码"><span class="nav-number">3.</span> <span class="nav-text">3XX - 重定向状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4XX-客户端错误状态码"><span class="nav-number">4.</span> <span class="nav-text">4XX - 客户端错误状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5XX-服务器错误状态码"><span class="nav-number">5.</span> <span class="nav-text">5XX - 服务器错误状态码</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">6.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
             
 
           </div>
