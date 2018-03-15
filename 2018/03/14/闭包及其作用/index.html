@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="什么是闭包理解闭包，首先必须理解变量作用域。JavaScript 有两种作用域：全局作用域和函数作用域。函数内部可以直接读取全局变量。但是，函数外部无法读取函数内部声明的变量。在函数内再嵌套一个函数，内层函数就可以访问在外层函数定义的变量，反过来就不行，外层函数无法访问内层函数的变量。这个内层函数 + 内层函数内部能访问到的外部变量的总和就是闭包。简而言之，当函数可以记住并访问所在的词法作用域时，">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T00:29:02.432Z">
+<meta property="og:updated_time" content="2018-03-15T05:01:10.820Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="闭包及其作用">
 <meta name="twitter:description" content="什么是闭包理解闭包，首先必须理解变量作用域。JavaScript 有两种作用域：全局作用域和函数作用域。函数内部可以直接读取全局变量。但是，函数外部无法读取函数内部声明的变量。在函数内再嵌套一个函数，内层函数就可以访问在外层函数定义的变量，反过来就不行，外层函数无法访问内层函数的变量。这个内层函数 + 内层函数内部能访问到的外部变量的总和就是闭包。简而言之，当函数可以记住并访问所在的词法作用域时，">
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  400
+                  413
                 </span>
               
 
@@ -373,17 +373,18 @@
       
 
       
-        <h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>理解闭包，首先必须理解变量作用域。JavaScript 有两种作用域：全局作用域和函数作用域。函数内部可以直接读取全局变量。但是，函数外部无法读取函数内部声明的变量。在函数内再嵌套一个函数，内层函数就可以访问在外层函数定义的变量，反过来就不行，外层函数无法访问内层函数的变量。这个内层函数 + 内层函数内部能访问到的外部变量的总和就是闭包。简而言之，当函数可以记住并访问所在的词法作用域时，就产生了闭包。</p>
+        <h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>理解闭包，首先必须理解变量作用域。JavaScript 有两种作用域：全局作用域和函数作用域。函数内部可以直接读取全局变量。但是，函数外部无法读取函数内部声明的变量。在函数内再嵌套一个函数，内层函数就可以访问在外层函数定义的变量，反过来就不行，外层函数无法访问内层函数的变量。这个内层函数 + 内层函数内部能访问到的外部变量的总和就是闭包。简而言之，当函数可以<strong>记住并访问所在的词法作用域</strong>时，就产生了闭包。</p>
 <p>闭包其实是函数作用域嵌套的副产品。</p>
 <h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><ul>
 <li>可以读取函数内部的变量</li>
 <li>让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在</li>
 </ul>
-<p>举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">'这就是闭包'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123; <span class="comment">// fn2 函数可以访问在 fn1 函数里定义的变量 a</span></span><br><span class="line">        <span class="built_in">console</span>.log(a); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp = fn1();</span><br><span class="line">temp(); <span class="comment">// '这就是闭包'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn4</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ++n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp2 = fn3(<span class="number">-1</span>);</span><br><span class="line">temp2(); <span class="comment">// 0</span></span><br><span class="line">temp2(); <span class="comment">// 1</span></span><br><span class="line">temp2(); <span class="comment">// 2</span></span><br><span class="line">temp2(); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 闭包使变量 n 一直存在与内存中，每次 temp2() 调用都是在前一次调用的基础基础上进行计算</span></span><br></pre></td></tr></table></figure></p>
+<p>举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">'这就是闭包'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123; <span class="comment">// fn2 函数可以访问在 fn1 函数里定义的变量 a</span></span><br><span class="line">        <span class="built_in">console</span>.log(a); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp = fn1();</span><br><span class="line">temp(); <span class="comment">// '这就是闭包'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn4</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ++n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp2 = fn3(<span class="number">-1</span>);</span><br><span class="line">temp2(); <span class="comment">// 0</span></span><br><span class="line">temp2(); <span class="comment">// 1</span></span><br><span class="line">temp2(); <span class="comment">// 2</span></span><br><span class="line">temp2(); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 闭包使变量 n 一直存在于内存中</span></span><br><span class="line"><span class="comment">// 每次 temp2() 调用都是在前一次调用的基础基础上进行计算</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a href="http://javascript.ruanyifeng.com/grammar/function.html#toc22" target="_blank" rel="noopener">函数 - 闭包</a></li>
 <li><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#you-dont-know-js-scope--closures" target="_blank" rel="noopener">You Don’t Know JS: Scope &amp; Closures</a></li>
 <li>你不知道的 JavaScript · 上卷 - 作用域闭包（Kyle Simpson 著，赵望野 梁杰 译）</li>
+<li><a href="https://zhuanlan.zhihu.com/p/22486908" target="_blank" rel="noopener">「每日一题」JS 中的闭包是什么？</a></li>
 </ul>
 
       
@@ -541,7 +542,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>

@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="call() 和 apply() 和 bind() 都可以用来指定函数内部 this 的指向，这三个方法的第一个参数都是 this 要指向的对象，如果不传入第一个参数或是第一个参数是 null 或 undefined，则 this 会指向全局对象。 call() 和 apply() 都会立即执行，bind() 只是返回一个具有固定 this 值的函数，可以在需要时再调用该函数。 bind() 每">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T00:28:39.007Z">
+<meta property="og:updated_time" content="2018-03-15T04:53:38.983Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="绑定this">
 <meta name="twitter:description" content="call() 和 apply() 和 bind() 都可以用来指定函数内部 this 的指向，这三个方法的第一个参数都是 this 要指向的对象，如果不传入第一个参数或是第一个参数是 null 或 undefined，则 this 会指向全局对象。 call() 和 apply() 都会立即执行，bind() 只是返回一个具有固定 this 值的函数，可以在需要时再调用该函数。 bind() 每">
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  341
+                  355
                 </span>
               
 
@@ -384,6 +384,9 @@
 <li><code>bind()</code> 可以用于为原函数的参数绑定默认值。</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">x, y</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x + y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn2.call(<span class="literal">null</span>, <span class="number">1</span>, <span class="number">2</span>)        <span class="comment">// 3</span></span><br><span class="line">fn2.apply(<span class="literal">null</span>, [<span class="number">1</span>, <span class="number">2</span>])     <span class="comment">// 3</span></span><br><span class="line"><span class="keyword">var</span> temp = fn2.bind(<span class="literal">null</span>, <span class="number">1</span>)</span><br><span class="line">temp(<span class="number">2</span>)                     <span class="comment">// 3</span></span><br><span class="line">temp(<span class="number">5</span>)                     <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="http://javascript.ruanyifeng.com/oop/this.html#toc6" target="_blank" rel="noopener"><code>this</code> 关键字 - 绑定 <code>this</code> 的方法</a></li>
+</ul>
 
       
     </div>
@@ -489,8 +492,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -531,7 +543,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">12</span>
+                  <span class="site-state-item-count">14</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -594,6 +606,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">1.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
