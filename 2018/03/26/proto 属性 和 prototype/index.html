@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="call() 和 apply() 和 bind() 都可以用来指定函数内部 this 的指向，这三个方法的第一个参数都是 this 要指向的对象，如果不传入第一个参数或是第一个参数是 null 或 undefined，则 this 会指向全局对象。 call() 和 apply() 都会立即执行，bind() 只是返回一个具有固定 this 值的函数，可以在需要时再调用该函数。 bind() 每">
+<meta name="description" content="原型对象、原型链">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="绑定this">
-<meta property="og:url" content="http://yoursite.com/2018/03/14/绑定this/index.html">
+<meta property="og:title" content="__proto__ 和 prototype">
+<meta property="og:url" content="http://yoursite.com/2018/03/26/proto 属性 和 prototype/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="call() 和 apply() 和 bind() 都可以用来指定函数内部 this 的指向，这三个方法的第一个参数都是 this 要指向的对象，如果不传入第一个参数或是第一个参数是 null 或 undefined，则 this 会指向全局对象。 call() 和 apply() 都会立即执行，bind() 只是返回一个具有固定 this 值的函数，可以在需要时再调用该函数。 bind() 每">
+<meta property="og:description" content="原型对象、原型链">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T05:25:17.081Z">
+<meta property="og:updated_time" content="2018-03-26T15:04:18.363Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="绑定this">
-<meta name="twitter:description" content="call() 和 apply() 和 bind() 都可以用来指定函数内部 this 的指向，这三个方法的第一个参数都是 this 要指向的对象，如果不传入第一个参数或是第一个参数是 null 或 undefined，则 this 会指向全局对象。 call() 和 apply() 都会立即执行，bind() 只是返回一个具有固定 this 值的函数，可以在需要时再调用该函数。 bind() 每">
+<meta name="twitter:title" content="__proto__ 和 prototype">
+<meta name="twitter:description" content="原型对象、原型链">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/14/绑定this/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/26/proto 属性 和 prototype/"/>
 
 
 
 
 
-  <title>绑定this | chen - Hexo Blog</title>
+  <title>__proto__ 和 prototype | chen - Hexo Blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/绑定this/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/proto 属性 和 prototype/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chen">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">绑定this</h1>
+          <h1 class="post-title" itemprop="name headline">__proto__ 和 prototype</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-14T07:33:07+08:00">
-                2018-03-14
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-26T22:26:52+08:00">
+                2018-03-26
               </time>
             
 
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  355
+                  332
                 </span>
               
 
@@ -358,6 +358,10 @@
             </div>
           
 
+          
+              <div class="post-description">
+                  原型对象、原型链
+              </div>
           
 
         </div>
@@ -373,19 +377,27 @@
       
 
       
-        <ul>
-<li><code>call()</code> 和 <code>apply()</code> 和 <code>bind()</code> 都可以用来指定函数内部 <code>this</code> 的指向，这三个方法的第一个参数都是 <code>this</code> 要指向的对象，如果不传入第一个参数或是第一个参数是 <code>null</code> 或 <code>undefined</code>，则 <code>this</code> 会指向全局对象。</li>
-<li><code>call()</code> 和 <code>apply()</code> 都会立即执行，<code>bind()</code> 只是返回一个具有固定 this 值的函数，可以在需要时再调用该函数。</li>
-<li><code>bind()</code> 每运行一次，就会返回一个新函数。</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> obj = &#123;&#125;</span><br><span class="line"></span><br><span class="line">fn1.call() === <span class="built_in">window</span>           <span class="comment">// true</span></span><br><span class="line">fn1.call(<span class="literal">null</span>) === <span class="built_in">window</span>       <span class="comment">// true</span></span><br><span class="line">fn1.call(<span class="literal">undefined</span>) === <span class="built_in">window</span>  <span class="comment">// true</span></span><br><span class="line">fn1.call(obj) === obj           <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line">fn1.apply() === <span class="built_in">window</span>          <span class="comment">// true</span></span><br><span class="line">fn1.apply(<span class="literal">null</span>) === <span class="built_in">window</span>      <span class="comment">// true</span></span><br><span class="line">fn1.apply(<span class="literal">undefined</span>) === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">fn1.apply(obj) === obj          <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> temp1 = fn1.bind()</span><br><span class="line"><span class="keyword">var</span> temp2 = fn1.bind()</span><br><span class="line"><span class="keyword">var</span> temp3 = fn1.bind(<span class="literal">null</span>)</span><br><span class="line"><span class="keyword">var</span> temp4 = fn1.bind(<span class="literal">undefined</span>)</span><br><span class="line"><span class="keyword">var</span> temp5 = fn1.bind(obj)</span><br><span class="line">temp1 === temp2    <span class="comment">// false </span></span><br><span class="line">temp1() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp2() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp3() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp4() === <span class="built_in">window</span> <span class="comment">// true</span></span><br><span class="line">temp5() === obj    <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> object = &#123;&#125;</span><br><span class="line">object.__proto__ === <span class="built_in">Object</span>.prototype             <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> fn = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">fn.__proto__ === <span class="built_in">Function</span>.prototype               <span class="comment">// true</span></span><br><span class="line">fn.__proto__.__proto__ === <span class="built_in">Object</span>.prototype       <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> array = []</span><br><span class="line">array.__proto__ === <span class="built_in">Array</span>.prototype               <span class="comment">// true</span></span><br><span class="line">array.__proto__.__proto__ === <span class="built_in">Object</span>.prototype    <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.__proto__ === <span class="built_in">Function</span>.prototype         <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Array</span>.__proto__ === <span class="built_in">Function</span>.prototype            <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Object</span>.__proto__ === <span class="built_in">Function</span>.prototype           <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="literal">true</span>.__proto__ === <span class="built_in">Boolean</span>.prototype              <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Function</span>.prototype.__proto__ === <span class="built_in">Object</span>.prototype <span class="comment">// true</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Object</span>.prototype.__proto__ === <span class="literal">null</span>               <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>原型对象的作用，就是定义所有实例对象共享的属性和方法。</p>
+<p>原型链的尽头就是 <code>null</code></p>
+</blockquote>
+<p><code>null</code> 没有任何属性和方法（函数属性），也没有自己的原型</p>
+<p>每一个函数都有 <code>prototype</code> 属性，指向 <code>函数.prototype</code> 对象，该对象有一个 <code>constructor</code> 属性，<code>constructor</code> 属性会回指函数本身，即：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;&#125;</span><br><span class="line">fn.prototype.constructor === fn <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>constructor属性定义在prototype对象上面，意味着可以被所有实例对象继承。</p>
+<p>constructor属性的作用是，可以得知某个实例对象，到底是哪一个构造函数产生的。</p>
+<p>有了constructor属性，可以从一个实例对象新建另一个实例。</p>
+<p>constructor属性表示原型对象与构造函数之间的关联关系，如果修改了原型对象，一般会同时修改constructor属性，防止引用的时候出错。</p>
+</blockquote>
 <ul>
-<li><code>call()</code> / <code>bind()</code> 的参数从第二个开始，都是一个一个传进去的；<code>apply()</code> 的第二个参数则必须是一个数组，数组中的元素会依次传进函数里。</li>
-<li><code>bind()</code> 可以用于为原函数的参数绑定默认值。</li>
+<li>参考链接<ul>
+<li><a href="http://javascript.ruanyifeng.com/oop/prototype.html#toc3" target="_blank" rel="noopener">prototype 对象</a></li>
+<li><a href="http://javascript.ruanyifeng.com/oop/prototype.html#toc4" target="_blank" rel="noopener">prototype 对象 - constructor 属性</a></li>
+<li><a href="http://javascript.ruanyifeng.com/oop/object.html#toc4" target="_blank" rel="noopener">Object 对象的相关方法</a></li>
 </ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params">x, y</span>)</span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(x + y);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">fn2.call(<span class="literal">null</span>, <span class="number">1</span>, <span class="number">2</span>)        <span class="comment">// 3</span></span><br><span class="line">fn2.apply(<span class="literal">null</span>, [<span class="number">1</span>, <span class="number">2</span>])     <span class="comment">// 3</span></span><br><span class="line"><span class="keyword">var</span> temp = fn2.bind(<span class="literal">null</span>, <span class="number">1</span>)</span><br><span class="line">temp(<span class="number">2</span>)                     <span class="comment">// 3</span></span><br><span class="line">temp(<span class="number">5</span>)                     <span class="comment">// 6</span></span><br></pre></td></tr></table></figure>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="http://javascript.ruanyifeng.com/oop/this.html#toc6" target="_blank" rel="noopener"><code>this</code> 关键字 - 绑定 <code>this</code> 的方法</a></li>
+</li>
 </ul>
 
       
@@ -428,8 +440,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/02/15/为博客配置一些小功能/" rel="next" title="为博客配置一些小功能">
-                <i class="fa fa-chevron-left"></i> 为博客配置一些小功能
+              <a href="/2018/03/15/hexo删除标签和分类/" rel="next" title="hexo删除无用的标签和分类">
+                <i class="fa fa-chevron-left"></i> hexo删除无用的标签和分类
               </a>
             
           </div>
@@ -437,10 +449,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/14/创建分类页面/" rel="prev" title="创建分类页面">
-                创建分类页面 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -492,17 +500,8 @@
       
 
       
-        <ul class="sidebar-nav motion-element">
-          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
-            文章目录
-          </li>
-          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
-            站点概览
-          </li>
-        </ul>
-      
 
-      <section class="site-overview-wrap sidebar-panel">
+      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -606,22 +605,6 @@
         </div>
       </section>
 
-      
-      <!--noindex-->
-        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
-          <div class="post-toc">
-
-            
-              
-            
-
-            
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#参考链接"><span class="nav-number">1.</span> <span class="nav-text">参考链接</span></a></li></ol></div>
-            
-
-          </div>
-        </section>
-      <!--/noindex-->
       
 
       
