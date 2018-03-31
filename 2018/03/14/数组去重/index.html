@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="去掉数组里相同的元素">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-15T05:24:48.961Z">
+<meta property="og:updated_time" content="2018-03-31T01:12:58.043Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组去重">
 <meta name="twitter:description" content="去掉数组里相同的元素">
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  99
+                  335
                 </span>
               
 
@@ -377,7 +377,31 @@
       
 
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">array = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = &#123;&#125;</span><br><span class="line">    <span class="keyword">var</span> newArray = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> value = array[i]</span><br><span class="line">        <span class="keyword">if</span> (!(value <span class="keyword">in</span> temp)) &#123; <span class="comment">// (!temp[value])</span></span><br><span class="line">            temp[value] = <span class="number">1</span></span><br><span class="line">            newArray.push(value)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArray</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">unique(array) <span class="comment">// [1, 5, 2, 3, 4]</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// return Array.from(new Set(array))</span></span><br><span class="line">    <span class="keyword">return</span> [...new <span class="built_in">Set</span>(array)]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">unique(array) <span class="comment">// [1, 5, 2, 3, 4]</span></span><br></pre></td></tr></table></figure>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line">array = [<span class="number">1</span>, <span class="number">5</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="string">'a'</span>, <span class="string">'b'</span>, <span class="string">'ab'</span>, <span class="string">'a'</span>, <span class="string">'b'</span>,</span><br><span class="line">    <span class="string">'ab'</span>, <span class="string">'a'</span>, <span class="literal">true</span>, <span class="literal">false</span>, <span class="literal">true</span>, <span class="literal">false</span>, <span class="string">'true'</span>, <span class="string">'true'</span>, </span><br><span class="line">    <span class="string">'false'</span>, <span class="string">'false'</span>, [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>], [], [], [<span class="number">4</span>, <span class="number">5</span>], </span><br><span class="line">    [<span class="number">4</span>, <span class="number">5</span>], &#123;&#125;,&#123;&#125;,&#123;<span class="string">"1"</span>:<span class="number">1</span>&#125;, &#123;<span class="string">"1"</span>:<span class="number">1</span>&#125;, &#123;<span class="string">"2"</span>:<span class="number">2</span>&#125;, &#123;<span class="string">"2"</span>:<span class="number">1</span>&#125;, <span class="literal">null</span>,</span><br><span class="line">    <span class="literal">null</span>, <span class="literal">undefined</span>, <span class="literal">undefined</span>, <span class="string">''</span>, <span class="string">''</span>, <span class="string">""</span>, <span class="string">""</span>, <span class="built_in">Symbol</span>(),</span><br><span class="line">    <span class="built_in">Symbol</span>(), <span class="string">'1'</span>, <span class="string">'1'</span>, <span class="string">'2'</span>, <span class="string">'2'</span>, <span class="string">'3'</span>, <span class="string">'3'</span>, <span class="string">'4'</span>, <span class="string">'4'</span>, <span class="string">'5'</span>, <span class="string">'5'</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">// ES5</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> temp = &#123;&#125;</span><br><span class="line">    <span class="keyword">var</span> newArray = []</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">var</span> i = <span class="number">0</span>; i &lt; array.length; i++) &#123;</span><br><span class="line">        <span class="keyword">var</span> value = array[i]</span><br><span class="line">        <span class="keyword">if</span> (!(value <span class="keyword">in</span> temp)) &#123; <span class="comment">// (!temp[value])</span></span><br><span class="line">            temp[value] = <span class="number">1</span></span><br><span class="line">            newArray.push(value)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> newArray</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">unique(array) </span><br><span class="line"><span class="comment">// [1, 5, 2, 3, 4, "a", "b", "ab", true, false, [1, 2, 3], </span></span><br><span class="line"><span class="comment">//     [], [4, 5], &#123;&#125;, null, undefined, Symbol(), Symbol()]</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// ES6</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">unique</span>(<span class="params">array</span>) </span>&#123;</span><br><span class="line">    <span class="comment">// return Array.from(new Set(array))</span></span><br><span class="line">    <span class="keyword">return</span> [...new <span class="built_in">Set</span>(array)]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">unique(array) </span><br><span class="line"><span class="comment">// [1, 5, 2, 3, 4, "a", "b", "ab", true, false, "true", </span></span><br><span class="line"><span class="comment">//    "false", [1, 2, 3], [1, 2, 3], [], [], [4, 5], [4, 5], </span></span><br><span class="line"><span class="comment">//    &#123;&#125;, &#123;&#125;, &#123;"1":1&#125;, &#123;"1":1&#125;, &#123;"2":2&#125;, &#123;"2":1&#125;, null,</span></span><br><span class="line"><span class="comment">//    undefined, "", Symbol(), Symbol(), "1", "2", "3", "4", "5"]</span></span><br></pre></td></tr></table></figure>
+<p>第一种方法的缺点：</p>
+<ul>
+<li>只能用于去重数值，非空字符串，数组，空对象元素，<code>null</code>，<code>undefined</code></li>
+<li>不能区分非空对象（如<code>{&quot;1&quot;:1}, {&quot;2&quot;:2}</code>）</li>
+<li>不能区分布尔值（<code>true</code>/<code>false</code>）和字符串形式的”true”/“false”</li>
+<li>不能区分数值<code>1</code>和字符串”1”</li>
+</ul>
+<p>第二种方法的缺点：</p>
+<ul>
+<li>不能区分对象（<code>Object</code> <code>Array</code>等），故简单类型（number string boolean null undefined symbol）优先选<code>[...new Set(array)]</code>。</li>
+</ul>
+<p>第三种方法：</p>
+<ul>
+<li><p><code>WeakSet</code>：待续</p>
+</li>
+<li><p>相关链接</p>
+<ul>
+<li><a href="http://es6.ruanyifeng.com/#docs/symbol" target="_blank" rel="noopener">Symbol</a></li>
+<li><a href="http://es6.ruanyifeng.com/#docs/set-map" target="_blank" rel="noopener">Set 和 Map 数据结构</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/WeakSet" target="_blank" rel="noopener">WeakSet</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/WeakMap" target="_blank" rel="noopener">WeakMap</a></li>
+</ul>
+</li>
+</ul>
 
       
     </div>
@@ -503,7 +527,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">22</span>
+                  <span class="site-state-item-count">38</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -525,7 +549,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">10</span>
+                  <span class="site-state-item-count">11</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -616,7 +640,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">7.5k</span>
+    <span title="Site words total count">8.6k</span>
   
 </div>
 
