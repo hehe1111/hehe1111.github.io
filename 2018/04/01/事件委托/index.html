@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="参考链接 AJAX XMLHttpRequest XMLHttpRequest.setRequestHeader() Using XMLHttpRequest HTTP访问控制（CORS） Access-Control-Allow-Origin CORS MIME 类型 Content-Type">
+<meta name="description" content="监听子元素，事件监听器不直接绑在子元素上，而是绑在父元素上。 优点：  可以为未存在的后代元素提前绑定事件 减少监听器的数量，节省资源   委托事件不能用于 SVG.  参考链接 .on() FrankFang/wheels Element.matches()">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax">
-<meta property="og:url" content="http://yoursite.com/2018/03/30/Ajax/index.html">
+<meta property="og:title" content="事件委托">
+<meta property="og:url" content="http://yoursite.com/2018/04/01/事件委托/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="参考链接 AJAX XMLHttpRequest XMLHttpRequest.setRequestHeader() Using XMLHttpRequest HTTP访问控制（CORS） Access-Control-Allow-Origin CORS MIME 类型 Content-Type">
+<meta property="og:description" content="监听子元素，事件监听器不直接绑在子元素上，而是绑在父元素上。 优点：  可以为未存在的后代元素提前绑定事件 减少监听器的数量，节省资源   委托事件不能用于 SVG.  参考链接 .on() FrankFang/wheels Element.matches()">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-31T05:39:25.408Z">
+<meta property="og:updated_time" content="2018-04-01T02:34:52.013Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax">
-<meta name="twitter:description" content="参考链接 AJAX XMLHttpRequest XMLHttpRequest.setRequestHeader() Using XMLHttpRequest HTTP访问控制（CORS） Access-Control-Allow-Origin CORS MIME 类型 Content-Type">
+<meta name="twitter:title" content="事件委托">
+<meta name="twitter:description" content="监听子元素，事件监听器不直接绑在子元素上，而是绑在父元素上。 优点：  可以为未存在的后代元素提前绑定事件 减少监听器的数量，节省资源   委托事件不能用于 SVG.  参考链接 .on() FrankFang/wheels Element.matches()">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/30/Ajax/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/04/01/事件委托/"/>
 
 
 
 
 
-  <title>Ajax | chen - Hexo Blog</title>
+  <title>事件委托 | chen - Hexo Blog</title>
   
 
 
@@ -263,7 +263,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/30/Ajax/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/01/事件委托/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chen">
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ajax</h1>
+          <h1 class="post-title" itemprop="name headline">事件委托</h1>
         
 
         <div class="post-meta">
@@ -292,8 +292,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-03-30T10:39:00+08:00">
-                2018-03-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-04-01T08:48:00+08:00">
+                2018-04-01
               </time>
             
 
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  26
+                  76
                 </span>
               
 
@@ -373,16 +373,19 @@
       
 
       
-        <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
-<li><a href="http://javascript.ruanyifeng.com/bom/ajax.html" target="_blank" rel="noopener">AJAX</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/setRequestHeader" target="_blank" rel="noopener">XMLHttpRequest.setRequestHeader()</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/API/XMLHttpRequest/Using_XMLHttpRequest" target="_blank" rel="noopener">Using XMLHttpRequest</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Access_control_CORS" target="_blank" rel="noopener">HTTP访问控制（CORS）</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Access-Control-Allow-Origin" target="_blank" rel="noopener">Access-Control-Allow-Origin</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/CORS" target="_blank" rel="noopener">CORS</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank" rel="noopener">MIME 类型</a></li>
-<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type" target="_blank" rel="noopener">Content-Type</a></li>
+        <p>监听子元素，事件监听器不直接绑在子元素上，而是绑在父元素上。</p>
+<p>优点：</p>
+<ul>
+<li>可以为未存在的后代元素提前绑定事件</li>
+<li>减少监听器的数量，节省资源</li>
+</ul>
+<blockquote>
+<p>委托事件<strong>不能</strong>用于 SVG.</p>
+</blockquote>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="https://www.jquery123.com/on/" target="_blank" rel="noopener"><code>.on()</code></a></li>
+<li><a href="https://github.com/FrankFang/wheels/blob/master/lib/dom/index.js#L2" target="_blank" rel="noopener">FrankFang/wheels</a></li>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Element/matches" target="_blank" rel="noopener">Element.matches()</a></li>
 </ul>
 
       
@@ -425,8 +428,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/30/Promise-对象/" rel="next" title="Promise 对象">
-                <i class="fa fa-chevron-left"></i> Promise 对象
+              <a href="/2018/03/31/移动端触摸事件/" rel="next" title="移动端触摸事件">
+                <i class="fa fa-chevron-left"></i> 移动端触摸事件
               </a>
             
           </div>
@@ -435,8 +438,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/30/JSONP/" rel="prev" title="JSONP">
-                JSONP <i class="fa fa-chevron-right"></i>
+              <a href="/2018/04/01/flex-布局/" rel="prev" title="flex 布局">
+                flex 布局 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
