@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="去掉数组里相同的元素">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-10T12:17:06.029Z">
+<meta property="og:updated_time" content="2018-06-10T12:26:21.398Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="数组去重">
 <meta name="twitter:description" content="去掉数组里相同的元素">
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  611
+                  619
                 </span>
               
 
@@ -390,11 +390,13 @@
 <p>第二种方法的缺点：</p>
 <ul>
 <li>不能区分对象（<code>Object</code> <code>Array</code>等），故简单类型（number string boolean null undefined symbol）优先选<code>[...new Set(array)]</code>。</li>
+<li>兼容性差。</li>
 </ul>
 <p>第三种方法：结合以上两种方法</p>
 <ul>
 <li>在 ES6 提供的 <code>[...new Set(array)]</code> 的基础上，先对数组进行第一步去重。问题在于，这种方法不能区分对象（<code>Object</code> <code>Array</code>等）。对于 <code>Object</code> 和 <code>Array</code>，可以用 <code>JSON.stringify()</code> 方法结合第一种方法来进行去重。结果表明，第三种方法去重效果优于前两种。</li>
 <li>缺点：要进行两次去重。</li>
+<li>兼容性差。</li>
 </ul>
 <p>第四种方法：</p>
 <ul>
