@@ -87,7 +87,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="仅记录一些常用的">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-01T10:45:52.059Z">
+<meta property="og:updated_time" content="2018-06-12T05:15:52.654Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="记录部分HTTP状态码">
 <meta name="twitter:description" content="仅记录一些常用的">
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1,003
+                  1,141
                 </span>
               
 
@@ -378,33 +378,40 @@
 
       
         <h2 id="1XX-信息性状态码"><a href="#1XX-信息性状态码" class="headerlink" title="1XX - 信息性状态码"></a>1XX - 信息性状态码</h2><ul>
-<li>100 Continue(继续) - 客户端应当继续发送请求。</li>
-<li>101 Switching Protocol(切换协议) - 服务器已经理解了客户端的请求，并将通过 <code>Upgrade</code> 消息头通知客户端采用不同的协议来完成这个请求。</li>
+<li>100 <code>Continue</code> - 客户端应当继续发送请求。</li>
+<li>101 <code>Switching Protocol</code> - 服务器将按客户端请求头中的 <code>Update</code> 字段切换协议。</li>
 </ul>
 <h2 id="2XX-成功状态码"><a href="#2XX-成功状态码" class="headerlink" title="2XX - 成功状态码"></a>2XX - 成功状态码</h2><ul>
-<li>200 OK(成功) - 请求成功。成功的意义根据请求所使用的方法不同而不同。</li>
-<li>204 No Content(无内容) - 该响应没有响应内容，只有响应头。用户代理可以根据新的响应头来更新对应资源的缓存信息。一般在只需要从客户端往服务器发送信息，而服务器对客户端不需要发送新信息内容的情况下使用。</li>
-<li>206 Partial Content(部分内容) - 该状态码表示客户端进行了范围请求，而服务器成功执行了这一部分的 GET 请求。响应报文中包含由 Content-Range 指定范围的实体内容。</li>
+<li>200 <code>OK</code> - 请求成功。成功的意义根据请求所使用的方法不同而不同。</li>
+<li>201 <code>Created</code> - 请求成功并创建了新的资源。这通常是在 <code>PUT</code> 请求之后发送的响应。</li>
+<li>202 <code>Accepted</code> - 请求已被接受，但还未响应，没有结果。</li>
+<li>204 <code>No Content</code> - 该响应没有响应内容，只有响应头。用户代理可以根据新的响应头来更新对应资源的缓存信息。一般在只需要从客户端往服务器发送信息，而服务器对客户端不需要发送新信息内容的情况下使用。客户端浏览器的文档视图<strong>不</strong>更改。</li>
+<li>205 <code>Reset Content</code> - 该响应没有响应内容，只有响应头。客户端浏览器的文档视图被<strong>重置</strong>。用于接受用户输入后，重置表单，方便用户的下一次输入。</li>
+<li>206 <code>Partial Content</code> - 该状态码表示客户端进行了范围请求，而服务器成功执行了这一部分的 <code>GET</code> 请求。响应报文中包含由 <code>Content-Range</code> 指定范围的实体内容。</li>
 </ul>
 <h2 id="3XX-重定向状态码"><a href="#3XX-重定向状态码" class="headerlink" title="3XX - 重定向状态码"></a>3XX - 重定向状态码</h2><ul>
-<li>301 Moved Permanently(永久移动) - 所请求的资源已经被分配了新的 URI，新的 URI 会在响应的 Location: 头字段里找到。</li>
-<li>302 Found(临时移动) - 所请求的资源已经被分配了新的 URI，但这只是临时性质的，资源对应的 URI 将来还可能继续改变。因此客户端在以后访问时还得继续使用该 URI。新的 URI 会在响应的 Location: 头字段里找到。</li>
-<li>303 See Other(查看其他位置) - 所请求的资源存在着另一个 URI，服务器发送该响应用来引导客户端使用 GET 方法访问另外一个 URI。303 与 302 有着相同的功能，但 303 明确表示客户端应当使用 GET 方法获取资源。</li>
-<li>304 Not Modified(未修改) - 所请求的资源距离上次访问并没有变化。客户端可以直接从浏览器缓存里获取该资源。304 虽然被划分在 3XX 类别中，但是和重定向没有关系。</li>
-<li>307 Temporary Redirect(临时重定向) - 307 和 302 有着相同的含义，但是 307 会遵照浏览器标准，不会从 POST 变成 GET。</li>
+<li>301 <code>Moved Permanently</code> - 永久重定向。新的 URI 会在响应的 <code>Location:</code> 头字段里找到。</li>
+<li>302 <code>Found</code> - 临时重定向。资源对应的 URI 将来还可能继续改变，因此客户端在以后访问时还得继续使用原地址。新的 URI 会在响应的 <code>Location:</code> 头字段里找到。</li>
+<li>303 <code>See Other</code> - 所请求的资源存在着另一个 URI，服务器发送该响应用来引导客户端使用 <code>GET</code> 方法访问另外一个 URI。303 与 302 有着相同的功能，但 303 明确表示客户端应当使用 <code>GET</code> 方法获取资源。</li>
+<li>304 <code>Not Modified</code> - 所请求的资源距离上次访问以来或根据请求的条件（请求头 <code>If-Modified-Since</code> 字段）并没有变化。客户端可以直接从浏览器缓存里获取该资源。304 虽然被划分在 3XX 类别中，但是和重定向没有关系。该响应没有响应内容，只有响应头。</li>
+<li>307 <code>Temporary Redirect</code> - 307 和 302 有着相同的含义，但是 307 会遵照浏览器标准，不会从 <code>POST</code> 变成 <code>GET</code>。客户端应当继续向原有地址发送以后的请求。</li>
+<li>308 <code>Permanent Redirect</code> - 308 和 301 有着相同的含义，但用户代理不能更改所使用的 HTTP 方法，前后两次请求的方法不能变。</li>
 </ul>
 <h2 id="4XX-客户端错误状态码"><a href="#4XX-客户端错误状态码" class="headerlink" title="4XX - 客户端错误状态码"></a>4XX - 客户端错误状态码</h2><ul>
-<li>400 Bad Request(错误请求) - 发送的请求中存在语法错误，服务器无法正常读取。需要修改请求的内容后再次发送请求。浏览器会像 200 OK 一样对待该状态码。</li>
-<li>401 Unauthorized(未授权)    - 需要身份验证后才能获取所请求的资源，类似于403错误。不同点是，当浏览器初次接受到 401 响应后，会弹出认证用的对话窗口，只要正确输入帐号密码，验证即可通过。</li>
-<li>403 Forbidden(禁止访问) - 请求资源的访问被服务器拒绝了，服务器端没有必要给出拒绝的详细理由。</li>
-<li>404 Not Found(未找到) - 服务器找不到所请求的资源。</li>
-<li>408    Request Timeout(请求超时) - 客户端没有在服务器预备等待的时间内完成一个请求的发送。这意味着服务器将会切断和客户端的连接。</li>
-<li>410    Gone(已失效) - 所请求的资源已经被删除。</li>
+<li>400 <code>Bad Request</code> - 发送的请求中存在语法错误，服务器无法正常读取。需要修改请求的内容后再次发送请求。</li>
+<li>401 <code>Unauthorized</code>    - 需要身份验证后才能获取所请求的资源，类似于 403 错误。不同点是，当浏览器初次接受到 401 响应后，会弹出认证用的对话窗口，只要正确输入帐号密码，验证即可通过。</li>
+<li>403 <code>Forbidden</code> - 请求资源的访问被服务器拒绝了。</li>
+<li>404 <code>Not Found</code> - 服务器找不到所请求的资源。</li>
+<li>405 <code>Method Not Allowed</code> - 请求方法不被允许。</li>
+<li>408    <code>Request Timeout</code> - 客户端没有在服务器预备等待的时间内完成一个请求的发送。这意味着服务器将会切断和客户端的连接。</li>
 </ul>
 <h2 id="5XX-服务器错误状态码"><a href="#5XX-服务器错误状态码" class="headerlink" title="5XX - 服务器错误状态码"></a>5XX - 服务器错误状态码</h2><ul>
-<li>500 Internal Server Error(内部服务器错误) - 服务器在执行请求时发生错误，也有可能是 Web 应用存在 bug 或某些临时的故障。</li>
-<li>502 Bad Gateway(网关错误)    - 服务器作为网关且从上游服务器获取到了一个无效的HTTP响应。</li>
-<li>503 Service Unavailable(服务不可用) - 由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是临时的，并且将在一段时间以后恢复。如果能够预计延迟时间，那么响应中可以包含一个 Retry-After: 头用以标明这个延迟时间。</li>
+<li>500 <code>Internal Server Error</code> - 服务器在执行请求时发生错误，也有可能是 Web 应用存在 bug 或某些临时的故障。</li>
+<li>501 <code>Not Implemented</code> - 请求方法不被服务器支持，无法处理。服务器被要求支持 <code>GET</code>/<code>HEAD</code>，故这两个请求不会得到 501 响应。</li>
+<li>502 <code>Bad Gateway</code>    - 服务器作为网关且从上游服务器获取到了一个无效的 HTTP 响应。</li>
+<li>503 <code>Service Unavailable</code> - 由于临时的服务器维护或者过载，服务器当前无法处理请求。这个状况是临时的，并且将在一段时间以后恢复。如果能够预计延迟时间，那么响应中可以包含一个 <code>Retry-After:</code> 头用以标明这个延迟时间。</li>
+<li>504 <code>Gateway Timeout</code> 服务器未能在等待时间内从上游服务器得到响应。</li>
+<li>505 <code>HTTP Version Not Supported</code> - 服务器不支持请求中所使用的 HTTP 版本协议。</li>
 </ul>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li>《图解 HTTP》（上野宣 著，于均良 译）</li>
@@ -693,7 +700,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">9.1k</span>
+    <span title="Site words total count">9.2k</span>
   
 </div>
 
