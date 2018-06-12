@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="参考链接 this 关键字 this 的值到底是什么？一次说清楚 JS 的 new 到底是干什么的？  相关链接 绑定this">
+<meta name="description" content="fn() 里的 this ：非严格模式是全局对象（浏览器下是 window），严格模式下是 undefined。（window.fn()） a.b.c.fn() 里的 this 是 a.b.c。 new fn() 里的 this 就是新生成的实例对象。 箭头函数里没有 this。在箭头函数里使用的 this 绑定了外层函数的 this。  参考链接 this 关键字 this 的值到底是什么？一">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="确定 this">
 <meta property="og:url" content="http://yoursite.com/2018/03/30/确定-this/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="参考链接 this 关键字 this 的值到底是什么？一次说清楚 JS 的 new 到底是干什么的？  相关链接 绑定this">
+<meta property="og:description" content="fn() 里的 this ：非严格模式是全局对象（浏览器下是 window），严格模式下是 undefined。（window.fn()） a.b.c.fn() 里的 this 是 a.b.c。 new fn() 里的 this 就是新生成的实例对象。 箭头函数里没有 this。在箭头函数里使用的 this 绑定了外层函数的 this。  参考链接 this 关键字 this 的值到底是什么？一">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-03-31T02:34:59.556Z">
+<meta property="og:updated_time" content="2018-06-12T08:20:15.777Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="确定 this">
-<meta name="twitter:description" content="参考链接 this 关键字 this 的值到底是什么？一次说清楚 JS 的 new 到底是干什么的？  相关链接 绑定this">
+<meta name="twitter:description" content="fn() 里的 this ：非严格模式是全局对象（浏览器下是 window），严格模式下是 undefined。（window.fn()） a.b.c.fn() 里的 this 是 a.b.c。 new fn() 里的 this 就是新生成的实例对象。 箭头函数里没有 this。在箭头函数里使用的 this 绑定了外层函数的 this。  参考链接 this 关键字 this 的值到底是什么？一">
 
 
 
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  38
+                  124
                 </span>
               
 
@@ -373,7 +373,13 @@
       
 
       
-        <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+        <ol>
+<li>fn() 里的 <code>this</code> ：非严格模式是全局对象（浏览器下是 <code>window</code>），严格模式下是 <code>undefined</code>。（window.fn()）</li>
+<li>a.b.c.fn() 里的 <code>this</code> 是 a.b.c。</li>
+<li>new fn() 里的 <code>this</code> 就是新生成的实例对象。</li>
+<li>箭头函数里没有 <code>this</code>。在箭头函数里使用的 <code>this</code> 绑定了外层函数的 <code>this</code>。</li>
+</ol>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li><a href="http://javascript.ruanyifeng.com/oop/this.html" target="_blank" rel="noopener">this 关键字</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/23804247" target="_blank" rel="noopener">this 的值到底是什么？一次说清楚</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/23987456" target="_blank" rel="noopener">JS 的 new 到底是干什么的？</a></li>
@@ -664,7 +670,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.0k</span>
+    <span title="Site words total count">10.5k</span>
   
 </div>
 

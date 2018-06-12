@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="监听子元素，事件监听器不直接绑在子元素上，而是绑在父元素上。 优点：  可以为未存在的后代元素提前绑定事件 减少监听器的数量，节省资源   委托事件不能用于 SVG.  参考链接 .on() FrankFang/wheels Element.matches()">
+<meta name="description" content="1234567891011121314function on(element, eventType, selector, handler) &amp;#123;  element.addEventListener(eventType, e =&amp;gt; &amp;#123;    let el = e.target    while (!el.matches(selector)) &amp;#123;      if (e">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件委托">
 <meta property="og:url" content="http://yoursite.com/2018/04/01/事件委托/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="监听子元素，事件监听器不直接绑在子元素上，而是绑在父元素上。 优点：  可以为未存在的后代元素提前绑定事件 减少监听器的数量，节省资源   委托事件不能用于 SVG.  参考链接 .on() FrankFang/wheels Element.matches()">
+<meta property="og:description" content="1234567891011121314function on(element, eventType, selector, handler) &amp;#123;  element.addEventListener(eventType, e =&amp;gt; &amp;#123;    let el = e.target    while (!el.matches(selector)) &amp;#123;      if (e">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-01T02:34:52.013Z">
+<meta property="og:updated_time" content="2018-06-12T07:57:13.348Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件委托">
-<meta name="twitter:description" content="监听子元素，事件监听器不直接绑在子元素上，而是绑在父元素上。 优点：  可以为未存在的后代元素提前绑定事件 减少监听器的数量，节省资源   委托事件不能用于 SVG.  参考链接 .on() FrankFang/wheels Element.matches()">
+<meta name="twitter:description" content="1234567891011121314function on(element, eventType, selector, handler) &amp;#123;  element.addEventListener(eventType, e =&amp;gt; &amp;#123;    let el = e.target    while (!el.matches(selector)) &amp;#123;      if (e">
 
 
 
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  76
+                  125
                 </span>
               
 
@@ -373,7 +373,8 @@
       
 
       
-        <p>监听子元素，事件监听器不直接绑在子元素上，而是绑在父元素上。</p>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">on</span>(<span class="params">element, eventType, selector, handler</span>) </span>&#123;</span><br><span class="line">  element.addEventListener(eventType, e =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> el = e.target</span><br><span class="line">    <span class="keyword">while</span> (!el.matches(selector)) &#123;</span><br><span class="line">      <span class="keyword">if</span> (el === element) &#123;</span><br><span class="line">        el = <span class="literal">null</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">      el = el.parentNode</span><br><span class="line">    &#125;</span><br><span class="line">    el &amp;&amp; handler.call(el, e, el)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> element</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>监听子元素，事件监听器不直接绑在子元素上，而是绑在父元素上。</p>
 <p>优点：</p>
 <ul>
 <li>可以为未存在的后代元素提前绑定事件</li>
@@ -670,7 +671,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">10.0k</span>
+    <span title="Site words total count">10.5k</span>
   
 </div>
 
