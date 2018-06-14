@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="Flex 是 Flexible Box 的缩写，意为”弹性布局”。  参考链接 Flex 布局教程：语法篇 Flex 布局教程：实例篇 笔记1 doc/flex-tutorial.md">
+<meta name="description" content="flex 布局属性简介">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="flex 布局">
 <meta property="og:url" content="http://yoursite.com/2018/04/01/flex-布局/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="Flex 是 Flexible Box 的缩写，意为”弹性布局”。  参考链接 Flex 布局教程：语法篇 Flex 布局教程：实例篇 笔记1 doc/flex-tutorial.md">
+<meta property="og:description" content="flex 布局属性简介">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-01T02:19:26.245Z">
+<meta property="og:updated_time" content="2018-06-14T06:22:27.849Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="flex 布局">
-<meta name="twitter:description" content="Flex 是 Flexible Box 的缩写，意为”弹性布局”。  参考链接 Flex 布局教程：语法篇 Flex 布局教程：实例篇 笔记1 doc/flex-tutorial.md">
+<meta name="twitter:description" content="flex 布局属性简介">
 
 
 
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-01T10:19:26+08:00">
-                2018-04-01
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-14T14:22:27+08:00">
+                2018-06-14
               </time>
             
           </span>
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  40
+                  360
                 </span>
               
 
@@ -358,6 +358,10 @@
             </div>
           
 
+          
+              <div class="post-description">
+                  flex 布局属性简介
+              </div>
           
 
         </div>
@@ -374,8 +378,27 @@
 
       
         <blockquote>
-<p>Flex 是 Flexible Box 的缩写，意为”弹性布局”。</p>
+<p>Flex 是 Flexible Box 的缩写，意为”弹性布局”。<br>设为 Flex 布局以后，子元素的 <code>float</code>、<code>clear</code> 和 <code>vertical-align</code> 属性将失效。</p>
 </blockquote>
+<ul>
+<li>flex 属性分为<strong>容器</strong>与<strong>项目</strong>属性</li>
+</ul>
+<h3 id="容器属性"><a href="#容器属性" class="headerlink" title="容器属性"></a>容器属性</h3><ol>
+<li><code>flex-direction</code>: 决定主轴方向。默认值 <code>row</code>。</li>
+<li><code>flex-wrap</code>: 决定是否换行。默认值 <code>nowrap</code>，不换行。</li>
+<li><code>flex-flow</code>: 前面两个属性的简写。默认值 <code>row nowrap</code>。</li>
+<li><code>justify-content</code>: 决定主轴的对齐方式。默认值 <code>flex-start</code>。</li>
+<li><code>align-items</code>: 决定侧轴的对齐方式。默认值 <code>stretch</code>，占满整个容器的高度。</li>
+<li><code>align-content</code>: 用于多轴线对齐，单轴线时不起作用。默认值 <code>stretch</code>。</li>
+</ol>
+<h3 id="项目属性"><a href="#项目属性" class="headerlink" title="项目属性"></a>项目属性</h3><ol>
+<li><code>order</code>: 决定项目的顺序。数值越小越靠前，默认值 0，可以为负值。</li>
+<li><code>flex-grow</code>: 决定项目的放大<strong>比例</strong>。默认值 0，即“不放大”。</li>
+<li><code>flex-shrink</code>: 决定项目的缩小<strong>比例</strong>。默认值 1，即“有必要时会缩小”。</li>
+<li><code>flex-basis</code>: 决定项目占据的主轴空间。默认值 <code>auto</code>，即“项目原本的大小”。可以用 <code>px</code> 等单位值设置为固定大小。</li>
+<li><code>flex</code>: 以上三个属性的简写。默认值 <code>0 1 auto</code>，即“不放大，默认为原本的大小，有必要时会缩小”。</li>
+<li><code>align-self</code>: 可决定单个元素的侧轴对齐方式，覆盖 <code>align-items</code> 的值。</li>
+</ol>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li><a href="http://www.ruanyifeng.com/blog/2015/07/flex-grammar.html" target="_blank" rel="noopener">Flex 布局教程：语法篇</a></li>
 <li><a href="http://www.ruanyifeng.com/blog/2015/07/flex-examples.html" target="_blank" rel="noopener">Flex 布局教程：实例篇</a></li>
@@ -646,7 +669,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.7k</span>
+    <span title="Site words total count">16.3k</span>
   
 </div>
 

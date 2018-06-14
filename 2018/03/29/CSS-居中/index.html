@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="参考链接 Centering in CSS: A Complete Guide">
+<meta name="description" content="CSS 居中的几种方案">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS 居中  - 仅参考链接">
+<meta property="og:title" content="CSS 居中">
 <meta property="og:url" content="http://yoursite.com/2018/03/29/CSS-居中/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="参考链接 Centering in CSS: A Complete Guide">
+<meta property="og:description" content="CSS 居中的几种方案">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T03:02:18.337Z">
+<meta property="og:updated_time" content="2018-06-14T07:36:00.658Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS 居中  - 仅参考链接">
-<meta name="twitter:description" content="参考链接 Centering in CSS: A Complete Guide">
+<meta name="twitter:title" content="CSS 居中">
+<meta name="twitter:description" content="CSS 居中的几种方案">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>CSS 居中  - 仅参考链接 | chen - Hexo Blog</title>
+  <title>CSS 居中 | chen - Hexo Blog</title>
   
 
 
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS 居中  - 仅参考链接</h1>
+          <h1 class="post-title" itemprop="name headline">CSS 居中</h1>
         
 
         <div class="post-meta">
@@ -296,7 +296,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-14T11:02:18+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-14T15:36:00+08:00">
                 2018-06-14
               </time>
             
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  10
+                  529
                 </span>
               
 
@@ -358,6 +358,10 @@
             </div>
           
 
+          
+              <div class="post-description">
+                  CSS 居中的几种方案
+              </div>
           
 
         </div>
@@ -373,7 +377,21 @@
       
 
       
-        <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+        <h2 id="水平居中"><a href="#水平居中" class="headerlink" title="水平居中"></a>水平居中</h2><h3 id="内联元素"><a href="#内联元素" class="headerlink" title="内联元素"></a>内联元素</h3><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在父元素上写 */</span></span><br><span class="line"><span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure>
+<h3 id="块级元素"><a href="#块级元素" class="headerlink" title="块级元素"></a>块级元素</h3><p>单个块水平居中<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在块级元素本身上加 */</span></span><br><span class="line"><span class="selector-tag">margin-left</span>: <span class="selector-tag">auto</span>;</span><br><span class="line"><span class="selector-tag">margin-right</span>: <span class="selector-tag">auto</span>;</span><br></pre></td></tr></table></figure></p>
+<p>多个块水平居中<br>方法一：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在块本身加 */</span></span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">inline-block</span>;</span><br><span class="line"><span class="comment">/* 可以用 `padding` 或 `margin` 隔开同级   */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* 并在块的父元素上加 */</span></span><br><span class="line"><span class="selector-tag">text-align</span>: <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure></p>
+<p>方法二：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 在块的父级元素上加 */</span></span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="垂直居中"><a href="#垂直居中" class="headerlink" title="垂直居中"></a>垂直居中</h2><h3 id="内联元素-1"><a href="#内联元素-1" class="headerlink" title="内联元素"></a>内联元素</h3><p>一行垂直居中<br>方法一：让 <code>padding-top</code> 等于 <code>padding-bottom</code><br>方法二：在父元素上令 <code>line-height</code> 等于 <code>height</code></p>
+<p>多行垂直居中<br>方法一：让 <code>padding-top</code> 等于 <code>padding-bottom</code><br>方法二：table 布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 父元素 */</span></span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">table</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 子元素 */</span></span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">table-cell</span>;</span><br><span class="line"><span class="selector-tag">vertical-align</span>: <span class="selector-tag">middle</span>;</span><br></pre></td></tr></table></figure></p>
+<p>方法三：flex 布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 父元素 */</span></span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"><span class="selector-tag">flex-direction</span>: <span class="selector-tag">column</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">center</span>;</span><br><span class="line"><span class="selector-tag">height</span>: <span class="selector-tag">xx</span> <span class="selector-tag">px</span>; <span class="comment">/* 高度必须固定 */</span></span><br></pre></td></tr></table></figure></p>
+<h3 id="块级元素-1"><a href="#块级元素-1" class="headerlink" title="块级元素"></a>块级元素</h3><p>方法一：让 <code>padding-top</code> 等于 <code>padding-bottom</code><br>方法二：已知块高度<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 父元素 */</span></span><br><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 子元素 */</span></span><br><span class="line"><span class="selector-tag">height</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line"><span class="selector-tag">top</span>: 50%; <span class="comment">/* 基于父高计算 */</span></span><br><span class="line"><span class="selector-tag">margin-top</span>: <span class="selector-tag">-50px</span>; <span class="comment">/* 基于子元素自身高度计算 */</span></span><br></pre></td></tr></table></figure></p>
+<p>方法三：未知块高度<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 父元素 */</span></span><br><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 子元素 */</span></span><br><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line"><span class="selector-tag">top</span>: 50%; <span class="comment">/* 基于父高计算 */</span></span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translateX</span>(<span class="selector-tag">-50</span>%); <span class="comment">/* 基于子元素自身高度计算 */</span></span><br></pre></td></tr></table></figure></p>
+<p>方法四：flex 布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 父元素 */</span></span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"><span class="selector-tag">flex-direction</span>: <span class="selector-tag">column</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure></p>
+<h2 id="水平且垂直居中"><a href="#水平且垂直居中" class="headerlink" title="水平且垂直居中"></a>水平且垂直居中</h2><p>方法一：让 <code>padding-top</code> 等于 <code>padding-bottom</code>，<code>margin-left</code> 等于 <code>margin-right</code><br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">margin-left</span>: <span class="selector-tag">auto</span>;</span><br><span class="line"><span class="selector-tag">margin-right</span>: <span class="selector-tag">auto</span>;</span><br></pre></td></tr></table></figure></p>
+<p>方法二：已知元素宽高<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 父元素 */</span></span><br><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 子元素 */</span></span><br><span class="line"><span class="selector-tag">height</span>: 100<span class="selector-tag">px</span>;</span><br><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line"><span class="selector-tag">top</span>: 50%; <span class="comment">/* 基于父高计算 */</span></span><br><span class="line"><span class="selector-tag">left</span>: 50%;</span><br><span class="line"><span class="selector-tag">margin-top</span>: <span class="selector-tag">-50px</span>; <span class="comment">/* 基于子元素自身高度计算 */</span></span><br><span class="line"><span class="selector-tag">margin-left</span>: <span class="selector-tag">-50px</span>;</span><br></pre></td></tr></table></figure></p>
+<p>方法三：未知元素宽高<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 父元素 */</span></span><br><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">relative</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">/* 子元素 */</span></span><br><span class="line"><span class="selector-tag">position</span>: <span class="selector-tag">absolute</span>;</span><br><span class="line"><span class="selector-tag">top</span>: 50%; <span class="comment">/* 基于父高计算 */</span></span><br><span class="line"><span class="selector-tag">left</span>: 50%;</span><br><span class="line"><span class="selector-tag">transform</span>: <span class="selector-tag">translate</span>(<span class="selector-tag">-50</span>% <span class="selector-tag">-50</span>%); <span class="comment">/* 基于子元素自身高度计算 */</span></span><br></pre></td></tr></table></figure></p>
+<p>方法四：flex 布局<br><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* 父元素 */</span></span><br><span class="line"><span class="selector-tag">display</span>: <span class="selector-tag">flex</span>;</span><br><span class="line"><span class="selector-tag">justify-content</span>: <span class="selector-tag">center</span>;</span><br><span class="line"><span class="selector-tag">align-items</span>: <span class="selector-tag">center</span>;</span><br></pre></td></tr></table></figure></p>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li><a href="https://css-tricks.com/centering-css-complete-guide/" target="_blank" rel="noopener">Centering in CSS: A Complete Guide</a></li>
 </ul>
 
@@ -417,8 +435,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/29/CSS-reset-和-CSS-normalize-css/" rel="next" title="CSS reset 和 CSS normalize.css  - 仅参考链接">
-                <i class="fa fa-chevron-left"></i> CSS reset 和 CSS normalize.css  - 仅参考链接
+              <a href="/2018/03/29/CSS-reset-和-CSS-normalize-css/" rel="next" title="CSS reset 和 CSS normalize.css">
+                <i class="fa fa-chevron-left"></i> CSS reset 和 CSS normalize.css
               </a>
             
           </div>
@@ -640,7 +658,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.7k</span>
+    <span title="Site words total count">16.3k</span>
   
 </div>
 

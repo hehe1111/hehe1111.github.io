@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="参考链接 Introduction to the CSS basic box model box-sizing Mastering margin collapsing clear Replaced element Inline elements Block formatting context 为何img、input等内联元素可以设置宽、高 行内元素设置宽高 为何img、input等内联元素可设置">
+<meta name="description" content="简介 CSS 盒模型">
 <meta name="keywords" content="CSS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS 盒模型  - 仅参考链接">
+<meta property="og:title" content="CSS 盒模型">
 <meta property="og:url" content="http://yoursite.com/2018/03/29/CSS-盒模型/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="参考链接 Introduction to the CSS basic box model box-sizing Mastering margin collapsing clear Replaced element Inline elements Block formatting context 为何img、input等内联元素可以设置宽、高 行内元素设置宽高 为何img、input等内联元素可设置">
+<meta property="og:description" content="简介 CSS 盒模型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T03:02:22.589Z">
+<meta property="og:updated_time" content="2018-06-14T06:21:51.678Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS 盒模型  - 仅参考链接">
-<meta name="twitter:description" content="参考链接 Introduction to the CSS basic box model box-sizing Mastering margin collapsing clear Replaced element Inline elements Block formatting context 为何img、input等内联元素可以设置宽、高 行内元素设置宽高 为何img、input等内联元素可设置">
+<meta name="twitter:title" content="CSS 盒模型">
+<meta name="twitter:description" content="简介 CSS 盒模型">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>CSS 盒模型  - 仅参考链接 | chen - Hexo Blog</title>
+  <title>CSS 盒模型 | chen - Hexo Blog</title>
   
 
 
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS 盒模型  - 仅参考链接</h1>
+          <h1 class="post-title" itemprop="name headline">CSS 盒模型</h1>
         
 
         <div class="post-meta">
@@ -296,7 +296,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-14T11:02:22+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-14T14:21:51+08:00">
                 2018-06-14
               </time>
             
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  61
+                  495
                 </span>
               
 
@@ -358,6 +358,10 @@
             </div>
           
 
+          
+              <div class="post-description">
+                  简介 CSS 盒模型
+              </div>
           
 
         </div>
@@ -373,7 +377,46 @@
       
 
       
-        <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+        <h3 id="盒模型："><a href="#盒模型：" class="headerlink" title="盒模型："></a>盒模型：</h3><p>在一个文档中，每个元素都被表示为一个<strong>矩形的盒子</strong>。确定这些盒子的尺寸、属性（包括边框、背景、颜色等）和位置是渲染引擎的目标。每个盒子均有 4 部分组成：</p>
+<ul>
+<li>内容区（有 <code>width</code>、<code>height</code> 属性）：包含元素真实内容的区域。</li>
+<li><code>padding</code>（内边距）：背景、颜色等会延伸到 <code>padding</code>。</li>
+<li><code>border</code>（边框）：可以用来画小三角形等简单图形。</li>
+<li><code>margin</code>（外边距）：存在外边距合并的情况。<ul>
+<li>三种情况有可能会出现外边距合并<ul>
+<li>相邻兄弟元素</li>
+<li>父元素与第一个或最后一个子元素之间，子元素的外边距溢出父元素</li>
+<li>空的块级元素</li>
+</ul>
+</li>
+<li>以下几个属性加在父元素上，可以清除父子外边距合并。当然，清除外边距合并还有其他方法。<ul>
+<li><code>overflow: hidden;</code></li>
+<li><code>padding-top: 0.1px;</code></li>
+<li><code>display: flow-root;</code></li>
+</ul>
+</li>
+<li><code>float</code> 或绝对定位（<code>absolute</code>、<code>fixed</code>）的元素的外边距不会被合并。</li>
+</ul>
+</li>
+</ul>
+<h3 id="定义不同的盒模型"><a href="#定义不同的盒模型" class="headerlink" title="定义不同的盒模型"></a>定义不同的盒模型</h3><ul>
+<li><code>box-sizing: border-box</code>：布局比较方便，计算时只需要考虑 <code>width</code> + <code>margin-left</code> + <code>margin-right</code>。真实内容宽度为 <code>width</code> 自动减去 <code>padding</code> 和 <code>border</code>。<ul>
+<li><code>width</code> = <code>content-width</code> + <code>padding-left</code> + <code>padding-right</code> + <code>border-left</code> + <code>border-right</code></li>
+<li><code>height</code> = <code>content-height</code> + <code>padding-top</code> + <code>padding-bottom</code> + <code>border-top</code> + <code>border-bottom</code></li>
+</ul>
+</li>
+<li><code>box-sizing: content-box</code>：真实内容宽度为 <code>width</code>，计算时要考虑 <code>padding</code>、<code>border</code>、<code>margin</code>。</li>
+</ul>
+<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
+<li>对于非替换元素的行内元素，其占用空间有 <code>line-height</code> 决定。</li>
+<li>行内元素默认是基线对齐：<code>vertical-align: baseline</code>。</li>
+<li>可替换元素：外观渲染独立于 CSS 的外部对象。<ul>
+<li><code>&lt;img&gt;</code>、<code>&lt;video&gt;</code>、<code>&lt;textarea&gt;</code>、<code>&lt;input&gt;</code> 等</li>
+</ul>
+</li>
+<li><code>&lt;img&gt;</code>、<code>&lt;input&gt;</code>等标签属于替换元素，一般都有内在尺寸和宽高比，可以设定 <code>width</code> 和 <code>height</code>。</li>
+</ul>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model" target="_blank" rel="noopener">Introduction to the CSS basic box model</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" target="_blank" rel="noopener">box-sizing</a></li>
 <li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank" rel="noopener">Mastering margin collapsing</a></li>
@@ -436,8 +479,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/29/CSS-reset-和-CSS-normalize-css/" rel="prev" title="CSS reset 和 CSS normalize.css  - 仅参考链接">
-                CSS reset 和 CSS normalize.css  - 仅参考链接 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/29/CSS-reset-和-CSS-normalize-css/" rel="prev" title="CSS reset 和 CSS normalize.css">
+                CSS reset 和 CSS normalize.css <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -649,7 +692,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.7k</span>
+    <span title="Site words total count">16.3k</span>
   
 </div>
 

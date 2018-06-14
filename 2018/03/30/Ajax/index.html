@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="参考链接 AJAX XMLHttpRequest XMLHttpRequest.setRequestHeader() Using XMLHttpRequest HTTP访问控制（CORS） Access-Control-Allow-Origin CORS MIME 类型 Content-Type">
+<meta name="description" content="Ajax">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="Ajax - 仅参考链接">
+<meta property="og:title" content="Ajax">
 <meta property="og:url" content="http://yoursite.com/2018/03/30/Ajax/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="参考链接 AJAX XMLHttpRequest XMLHttpRequest.setRequestHeader() Using XMLHttpRequest HTTP访问控制（CORS） Access-Control-Allow-Origin CORS MIME 类型 Content-Type">
+<meta property="og:description" content="Ajax">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-06-14T03:01:58.706Z">
+<meta property="og:updated_time" content="2018-06-14T08:28:53.443Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Ajax - 仅参考链接">
-<meta name="twitter:description" content="参考链接 AJAX XMLHttpRequest XMLHttpRequest.setRequestHeader() Using XMLHttpRequest HTTP访问控制（CORS） Access-Control-Allow-Origin CORS MIME 类型 Content-Type">
+<meta name="twitter:title" content="Ajax">
+<meta name="twitter:description" content="Ajax">
 
 
 
@@ -126,7 +126,7 @@
 
 
 
-  <title>Ajax - 仅参考链接 | chen - Hexo Blog</title>
+  <title>Ajax | chen - Hexo Blog</title>
   
 
 
@@ -280,7 +280,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">Ajax - 仅参考链接</h1>
+          <h1 class="post-title" itemprop="name headline">Ajax</h1>
         
 
         <div class="post-meta">
@@ -296,7 +296,7 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-06-14T11:01:58+08:00">
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-14T16:28:53+08:00">
                 2018-06-14
               </time>
             
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  26
+                  241
                 </span>
               
 
@@ -358,6 +358,10 @@
             </div>
           
 
+          
+              <div class="post-description">
+                  Ajax
+              </div>
           
 
         </div>
@@ -373,7 +377,15 @@
       
 
       
-        <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+        <p>用 <code>Promise</code> 封装实现 <code>Ajax</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> ajax = <span class="function">(<span class="params">(&#123;method, url, headers = <span class="string">''</span>, body = <span class="string">''</span>&#125;</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line"></span><br><span class="line">    xhr.open(method, url)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> (headers) &#123;</span><br><span class="line">      <span class="keyword">for</span> (<span class="keyword">let</span> key <span class="keyword">in</span> headers) &#123;</span><br><span class="line">        xhr.setRequestHeader(key, headers[key])</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    xhr.onreadystatechange = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">if</span> (xhr.readyState === <span class="number">4</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span> ((xhr.status &gt;= <span class="number">200</span> &amp;&amp; xhr.status &lt; <span class="number">300</span>)</span><br><span class="line">          || (xhr.status === <span class="number">304</span>) ) &#123;</span><br><span class="line">            resolve(response)</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">          reject(request)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    xhr.send(body)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p>同源政策：协议、域名、端口均要相同。</p>
+<p><code>Ajax</code> 请求只能发给同源网站，有三种方法可以使 <code>Ajax</code> 请求跨域。</p>
+<ol>
+<li>JSONP</li>
+<li>CORS（Cross-Origin Resource Sharing）：服务器端会检查浏览器发来的请求，如果服务器允许请求头里的 <code>origin</code> 字段的网址访问，则会在返回的响应头里添加 <code>Access-Control-Allow-Origin</code> 字段，该字段的值与请求头里的 <code>origin</code> 字段的值相同（当然还有其他字段）。</li>
+<li>WebSocket</li>
+</ol>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li><a href="http://javascript.ruanyifeng.com/bom/ajax.html" target="_blank" rel="noopener">AJAX</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest/setRequestHeader" target="_blank" rel="noopener">XMLHttpRequest.setRequestHeader()</a></li>
@@ -648,7 +660,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.7k</span>
+    <span title="Site words total count">16.3k</span>
   
 </div>
 

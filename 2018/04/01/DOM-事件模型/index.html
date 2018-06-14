@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="参考链接 冒泡模型 捕获与冒泡模型">
+<meta name="description" content="DOM 事件模型">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="DOM 事件模型">
 <meta property="og:url" content="http://yoursite.com/2018/04/01/DOM-事件模型/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="参考链接 冒泡模型 捕获与冒泡模型">
+<meta property="og:description" content="DOM 事件模型">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2018-04-01T02:20:33.189Z">
+<meta property="og:updated_time" content="2018-06-14T06:39:48.634Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="DOM 事件模型">
-<meta name="twitter:description" content="参考链接 冒泡模型 捕获与冒泡模型">
+<meta name="twitter:description" content="DOM 事件模型">
 
 
 
@@ -296,8 +296,8 @@
               
                 <span class="post-meta-item-text">更新于&#58;</span>
               
-              <time title="更新于" itemprop="dateModified" datetime="2018-04-01T10:20:33+08:00">
-                2018-04-01
+              <time title="更新于" itemprop="dateModified" datetime="2018-06-14T14:39:48+08:00">
+                2018-06-14
               </time>
             
           </span>
@@ -348,7 +348,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  15
+                  115
                 </span>
               
 
@@ -358,6 +358,10 @@
             </div>
           
 
+          
+              <div class="post-description">
+                  DOM 事件模型
+              </div>
           
 
         </div>
@@ -373,9 +377,19 @@
       
 
       
-        <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+        <h3 id="预览链接"><a href="#预览链接" class="headerlink" title="预览链接"></a>预览链接</h3><ul>
 <li><a href="https://hehe1111.github.io/js_demo/visual-dom-event-model/bubble.html" target="_blank" rel="noopener">冒泡模型</a></li>
 <li><a href="https://hehe1111.github.io/js_demo/visual-dom-event-model/capture-bubble.html" target="_blank" rel="noopener">捕获与冒泡模型</a></li>
+<li><a href="https://github.com/hehe1111/js_demo/tree/master/visual-dom-event-model" target="_blank" rel="noopener">源码链接</a></li>
+</ul>
+<p>在同一个元素上，冒泡与捕获没有固定的先后顺序，哪一个先触发取决于绑定事件时的顺序<br><code>target.addEventListener(type, listener[, {capture: Boolean,
+                                           once: Boolean,
+                                           passive: Boolean}])</code></p>
+<blockquote>
+<p><code>passive: Boolean</code>，表示 listener 永远不会调用 <code>preventDefault()</code>。如果 listener 仍然调用了这个函数，客户端将会忽略它并抛出一个控制台警告。</p>
+</blockquote>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/EventTarget/addEventListener" target="_blank" rel="noopener">EventTarget.addEventListener()</a>                           </li>
 </ul>
 
       
@@ -641,7 +655,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">13.7k</span>
+    <span title="Site words total count">16.3k</span>
   
 </div>
 
