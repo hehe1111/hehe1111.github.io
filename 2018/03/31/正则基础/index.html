@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="正则表达式">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-14T08:56:50.771Z">
+<meta property="og:updated_time" content="2018-07-20T14:18:12.290Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="正则基础">
 <meta name="twitter:description" content="正则表达式">
@@ -235,7 +235,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">48</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">51</span></a>
   </li>
         
         
@@ -369,7 +369,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-14 16:56:50" itemprop="dateModified" datetime="2018-06-14T16:56:50+08:00">2018-06-14</time>
+                <time title="修改时间：2018-07-20 22:18:12" itemprop="dateModified" datetime="2018-07-20T22:18:12+08:00">2018-07-20</time>
               
             
           </span>
@@ -422,15 +422,19 @@
       
 
       
-        <p>用正则实现 <code>String.prototype.trim()</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> trim = <span class="function">(<span class="params">string</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> string.replace(<span class="regexp">/^\s+|\s+$/g</span>, <span class="string">''</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>用正则实现 <code>String.prototype.trimLeft()</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> trimLeft = <span class="function">(<span class="params">string</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> string.replace(<span class="regexp">/^\s+/</span>, <span class="string">''</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>用正则实现 <code>String.prototype.trimRight()</code><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> trimRight = <span class="function">(<span class="params">string</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> string.replace(<span class="regexp">/\s+$/</span>, <span class="string">''</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+        <p>用正则实现 <code>String.prototype.trim()</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> trim = <span class="function">(<span class="params">string</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> string.replace(<span class="regexp">/^\s+|\s+$/g</span>, <span class="string">''</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用正则实现 <code>String.prototype.trimLeft()</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> trimLeft = <span class="function">(<span class="params">string</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> string.replace(<span class="regexp">/^\s+/</span>, <span class="string">''</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用正则实现 <code>String.prototype.trimRight()</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> trimRight = <span class="function">(<span class="params">string</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">return</span> string.replace(<span class="regexp">/\s+$/</span>, <span class="string">''</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p><code>String.prototype.replace()</code> 返回一个<strong>新</strong>字符串，原字符串不会改变。</p>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Guide/Regular_Expressions" target="_blank" rel="noopener">正则表达式 - MDN</a></li>
 <li><a href="https://deerchao.net/tutorials/regex/regex.htm" target="_blank" rel="noopener">正则表达式30分钟入门教程</a></li>
 <li><a href="https://deerchao.net/tutorials/regex/common.htm" target="_blank" rel="noopener">常用正则表达式</a></li>
 <li><a href="https://regexr.com/" target="_blank" rel="noopener">一个正则测试网站</a></li>
+<li><a href="https://yuchengkai.cn/docs/zh/frontend/#%E6%AD%A3%E5%88%99%E8%A1%A8%E8%BE%BE%E5%BC%8F" target="_blank" rel="noopener">InterviewMap</a></li>
 </ul>
 
       
@@ -486,8 +490,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/31/对象/" rel="prev" title="对象  - 仅参考链接">
-                对象  - 仅参考链接 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/31/对象/" rel="prev" title="对象 - 仅参考链接">
+                对象 - 仅参考链接 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -559,7 +563,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">51</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -729,7 +733,7 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">chen</span>
-  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 17.7k 字</span>
+  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 18.0k 字</span>
 
   
 

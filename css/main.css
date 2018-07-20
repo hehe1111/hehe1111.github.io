@@ -1831,7 +1831,7 @@ img:hover {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #61f7f1;
+  background: #ff6bff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2859,4 +2859,22 @@ blockquote {
 code {
   color: #ff0057;
   background-color: #ddd;
+}
+.posts-collapse .post,
+h1,
+h2 {
+  margin: 0;
+}
+.posts-collapse .collection-title {
+  margin: 20px 0;
+}
+.post-button a {
+  border: 2px solid #666;
+  border-radius: 6px;
+  padding: 0px 6px;
+  transition: all 0.8s;
+}
+.post-button a:hover {
+  color: #fff;
+  background-color: #666;
 }

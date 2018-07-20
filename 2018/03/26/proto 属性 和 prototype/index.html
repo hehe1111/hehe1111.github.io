@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="原型对象、原型链">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-14T06:20:22.495Z">
+<meta property="og:updated_time" content="2018-07-20T14:28:07.136Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="__proto__ 和 prototype">
 <meta name="twitter:description" content="原型对象、原型链">
@@ -235,7 +235,7 @@
           
           <li class="menu-item menu-item-archives">
     <a href="/archives/" rel="section">
-      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">48</span></a>
+      <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />归档<span class="badge">51</span></a>
   </li>
         
         
@@ -369,7 +369,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-14 14:20:22" itemprop="dateModified" datetime="2018-06-14T14:20:22+08:00">2018-06-14</time>
+                <time title="修改时间：2018-07-20 22:28:07" itemprop="dateModified" datetime="2018-07-20T22:28:07+08:00">2018-07-20</time>
               
             
           </span>
@@ -438,10 +438,12 @@
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.valueOf === <span class="built_in">Object</span>.valueOf <span class="comment">// true</span></span><br><span class="line"><span class="built_in">Array</span>.prototype.toString === <span class="built_in">Object</span>.toString <span class="comment">// false</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> a =[]</span><br><span class="line">a.toString === <span class="built_in">Object</span>.prototype.toString <span class="comment">// false</span></span><br><span class="line">a.valueOf === <span class="built_in">Object</span>.prototype.valueOf <span class="comment">// true</span></span><br></pre></td></tr></table></figure>
 <ul>
-<li><p>比起 <code>Object.setPrototypeOf()</code> ，建议优先使用 <code>Object.create()</code></p>
-</li>
-<li><p>参考链接</p>
-<ul>
+<li>比起 <code>Object.setPrototypeOf()</code> ，建议优先使用 <code>Object.create()</code></li>
+</ul>
+<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
+<li><a href="http://www.mollypages.org/tutorials/js.mp" target="_blank" rel="noopener">Javascript Object Hierarchy</a></li>
+<li><a href="https://github.com/KieSun/Blog/issues/2" target="_blank" rel="noopener">深度解析原型中的各个难点</a></li>
+<li><a href="https://yuchengkai.cn/docs/zh/frontend/#%E5%8E%9F%E5%9E%8B" target="_blank" rel="noopener">InterviewMap</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Learn/JavaScript/Objects/Object_prototypes" target="_blank" rel="noopener">对象原型</a></li>
 <li><a href="http://javascript.ruanyifeng.com/oop/prototype.html#toc3" target="_blank" rel="noopener">prototype 对象</a></li>
 <li><a href="http://javascript.ruanyifeng.com/oop/prototype.html#toc4" target="_blank" rel="noopener">prototype 对象 - constructor 属性</a></li>
@@ -452,8 +454,6 @@
 <li><a href="https://zhuanlan.zhihu.com/p/23090041" target="_blank" rel="noopener">「每日一题」什么是 JS 原型链？</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/22473059" target="_blank" rel="noopener">「每日一题」谈谈你对原型、原型链、 Function、Object 的理解？</a></li>
 <li><a href="https://zhuanlan.zhihu.com/p/22189387" target="_blank" rel="noopener">Javascript的原型链图</a></li>
-</ul>
-</li>
 </ul>
 
       
@@ -582,7 +582,7 @@
                 
                   <a href="/archives/">
                 
-                    <span class="site-state-item-count">48</span>
+                    <span class="site-state-item-count">51</span>
                     <span class="site-state-item-name">日志</span>
                   </a>
                 </div>
@@ -752,7 +752,7 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">chen</span>
-  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 17.7k 字</span>
+  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 18.0k 字</span>
 
   
 
