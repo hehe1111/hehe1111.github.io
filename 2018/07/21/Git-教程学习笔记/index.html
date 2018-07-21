@@ -113,25 +113,25 @@
 
 
 
-  <meta name="description" content="简介 CSS 盒模型">
-<meta name="keywords" content="CSS">
+  <meta name="description" content="来源：Git 教程 - 廖雪峰的官方网站">
+<meta name="keywords" content="Git">
 <meta property="og:type" content="article">
-<meta property="og:title" content="CSS 盒模型">
-<meta property="og:url" content="http://yoursite.com/2018/03/29/CSS-盒模型/index.html">
+<meta property="og:title" content="Git 教程学习笔记">
+<meta property="og:url" content="http://yoursite.com/2018/07/21/Git-教程学习笔记/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="简介 CSS 盒模型">
+<meta property="og:description" content="来源：Git 教程 - 廖雪峰的官方网站">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-14T08:35:55.773Z">
+<meta property="og:updated_time" content="2018-07-21T04:58:14.646Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="CSS 盒模型">
-<meta name="twitter:description" content="简介 CSS 盒模型">
+<meta name="twitter:title" content="Git 教程学习笔记">
+<meta name="twitter:description" content="来源：Git 教程 - 廖雪峰的官方网站">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/29/CSS-盒模型/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/21/Git-教程学习笔记/"/>
 
 
 
@@ -141,7 +141,7 @@
   };
 </script>
 
-  <title>CSS 盒模型 | chen - Hexo Blog</title>
+  <title>Git 教程学习笔记 | chen - Hexo Blog</title>
   
 
 
@@ -310,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/29/CSS-盒模型/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/21/Git-教程学习笔记/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chen">
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">CSS 盒模型
+          <h1 class="post-title" itemprop="name headline">Git 教程学习笔记
               
             
           </h1>
@@ -352,24 +352,12 @@
                 
               
 
-              <time title="创建时间：2018-03-29 17:39:00" itemprop="dateCreated datePublished" datetime="2018-03-29T17:39:00+08:00">2018-03-29</time>
+              <time title="创建时间：2018-07-21 06:00:42 / 修改时间：12:58:14" itemprop="dateCreated datePublished" datetime="2018-07-21T06:00:42+08:00">2018-07-21</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-14 16:35:55" itemprop="dateModified" datetime="2018-06-14T16:35:55+08:00">2018-06-14</time>
               
             
           </span>
@@ -386,7 +374,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/代码管理/" itemprop="url" rel="index"><span itemprop="name">代码管理</span></a></span>
 
                 
                 
@@ -406,7 +394,7 @@
           
 
           
-              <div class="post-description">简介 CSS 盒模型</div>
+              <div class="post-description">来源：Git 教程 - 廖雪峰的官方网站</div>
           
 
         </div>
@@ -422,56 +410,193 @@
       
 
       
-        <h3 id="盒模型"><a href="#盒模型" class="headerlink" title="盒模型"></a>盒模型</h3><p>在一个文档中，每个元素都被表示为一个<strong>矩形的盒子</strong>。确定这些盒子的尺寸、属性（包括边框、背景、颜色等）和位置是渲染引擎的目标。每个盒子均有 4 部分组成：</p>
+        <ul>
+<li>2005 年，Linus 花了两周时间用 C 写了一个分布式版本控制系统，Git。2008 年，GitHub 上线。GitHub 为开源项目免费提供 Git 存储。2018 年，GitHub 被微软收购。</li>
+<li>使用 Git 的理由：方便管理代码的修改，通过不同版本之间的对比，可以明确的知道何处发生改动（增、删、改）。</li>
+<li>集中式版本控制系统与分布式版本控制系统的对比：<a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374027586935cf69c53637d8458c9aec27dd546a6cd6000" target="_blank" rel="noopener">集中式vs分布式</a><ul>
+<li>集中式：版本库集中放在服务器，<strong>本地没有历史版本，每次 commit 都必须联网</strong>，否则无法记录修改。使用体验受网速影响。如果服务器挂了，所有人停止工作。</li>
+<li>分布式：每一台电脑上都有一个完整的版本库，安全性比集中式高。实际工作中，分布式也有一台充当“中央服务器”的电脑，方便不同电脑之间交换修改。可以在断网的条件下，正常进行开发工作，本地版本库的版本提交不受影响，支持版本回退，只是无法推送到远程仓库（“中央服务器”）。Git 只在 push/pull 操作时需要联网。在实际工作中，commit 操作频率相对更高。“中央服务器”如果挂了，所有人仍正常工作，仅仅是不方便交换修改而已。可以随时创建一个新的中央库，从任一台电脑同步之后就可以恢复中央库了。</li>
+<li>CVS：最早的开源、免费的集中式版本控制系统，存在提交文件不完整，版本库会突然出现损坏的情况。</li>
+<li>SVN：目前用的最多的开源、免费的集中式版本控制系统，比 CVS 稳定。</li>
+<li>Git：目前最流行的分布式版本控制系统。分为：<ul>
+<li>工作区（Working Directory）：执行 <code>git init</code> 初始化时的本地目录。</li>
+<li>版本库（Repository）：执行 <code>git init</code> 初始化时，会在当前本地目录下生成一个文件夹 .git，默认隐藏。.git 就是 Git 的本地版本库。<ul>
+<li>暂存区（stage 或叫 index）：<code>git add &lt;file&gt;</code> 即是将工作区的文件变动添加到暂存区。</li>
+<li>master 分支：由 Git 自动创建：<code>git commit -m &lt;message&gt;</code> 即是将暂存区的文件变动提交到当前分支。</li>
+<li>HEAD 指针： 指向当前分支。</li>
+</ul>
+</li>
+<li>示意图：<a href="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384907702917346729e9afbf4127b6dfbae9207af016000/0" target="_blank" rel="noopener">工作区、版本库（暂存区、master 分支、HEAD 指针）</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
 <ul>
-<li>内容区（有 <code>width</code>、<code>height</code> 属性）：包含元素真实内容的区域。</li>
-<li><code>padding</code>（内边距）：背景、颜色等会延伸到 <code>padding</code>。</li>
-<li><code>border</code>（边框）：可以用来画小三角形等简单图形。</li>
-<li><code>margin</code>（外边距）：存在外边距合并的情况。<ul>
-<li>三种情况有可能会出现外边距合并<ul>
-<li>相邻兄弟元素</li>
-<li>父元素与第一个或最后一个子元素之间，子元素的外边距溢出父元素</li>
-<li>空的块级元素</li>
+<li><p><code>git config</code><br>显示与配置相关的命令参数。</p>
+</li>
+<li><p><code>git config -l</code><br>显示所有配置。</p>
+</li>
+<li><p><code>git init</code><br>初始化一个目录，通知 Git 对目录进行版本追踪管理。</p>
+</li>
+<li><p><code>git add &lt;file&gt;</code><br>从工作区添加到暂存区。<a href="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384907720458e56751df1c474485b697575073c40ae9000/0" target="_blank" rel="noopener">示意图</a></p>
+</li>
+<li><p><code>git commit -m &lt;message&gt;</code><br>从暂存区提交到本地版本库。<a href="https://cdn.liaoxuefeng.com/cdn/files/attachments/0013849077337835a877df2d26742b88dd7f56a6ace3ecf000/0" target="_blank" rel="noopener">示意图</a></p>
+</li>
+<li><p><code>git status</code><br>查看工作区状态，显示修改了哪些文件。</p>
+</li>
+<li><p><code>git status -sb</code><br>作用与 <code>git status</code> 相同，只是显示信息相对更加简化，方便查看。</p>
+</li>
+<li><p><code>git diff [&lt;file&gt;]</code><br>查看文件具体的修改内容。工作区(working directory)和暂存区(stage)的比较。</p>
+</li>
+<li><p><code>git diff --cached</code><br>查看暂存区(stage)和分支(master)的比较。</p>
+</li>
+<li><p><code>git diff HEAD -- &lt;file&gt;</code><br>查看工作区和版本库里面最新版本的区别。</p>
+</li>
+<li><p><code>git log</code><br>由近及远查看<strong>提交记录</strong>。(commit 时的 message)</p>
+</li>
+<li><p><code>git reflog</code><br>由近及远查看<strong>命令记录</strong>。(使用过的 Git 操作命令)</p>
+</li>
+<li><p><code>git log --pretty=oneline</code><br>作用与 <code>git log</code> 相同，但是 <code>--pretty=oneline</code> 参数会简化显示信息。<br>加上 <code>--abbrev-commit</code> 参数会使 commit_id 较变短，只有 7 位。</p>
+</li>
+<li><p><code>git log --graph</code><br>查看<strong>分支合并</strong>图。</p>
+</li>
+<li><p><code>git log --graph --pretty=oneline --abbrev-commit</code><br>作用同 <code>git log --graph</code>，但是信息会更简化。</p>
+</li>
+<li><p><code>git reset --hard &lt;commit_id&gt;</code><br>回退到指定版本。commit_id 也可以是 <code>HEAD</code> 关键字。<code>HEAD</code> 指代当前版本，<code>HEAD^</code> 指代上一个版本，<code>HEAD^^</code> 指代上上个版本，以此类推。<code>git reset --hard HEAD^100</code> 指回退到前第 100 个版本。</p>
+</li>
+<li><p><code>git reset HEAD &lt;file&gt;</code><br><strong>撤销暂存区的修改</strong>（unstage），<strong>重新放回工作区</strong>。<br><code>git reset</code> 命令既可以回退版本，也可以把暂存区的修改回退到工作区。</p>
+</li>
+</ul>
+<ul>
+<li><code>git checkout -- &lt;file&gt;</code><br><strong>撤销工作区的修改</strong>。<br>本质：用版本库里的版本<strong>替换</strong>工作区的版本。<ul>
+<li>工作区修改未提交到暂存区，则会使工作区与版本库的最新版本保持一致。</li>
+<li>工作区修改已经提交到暂存区，则会使工作区与暂存区的版本保持一致。</li>
 </ul>
 </li>
-<li>以下几个属性加在父元素上，可以清除父子外边距合并。当然，清除外边距合并还有其他方法。<ul>
-<li><code>overflow: hidden;</code></li>
-<li><code>padding-top: 0.1px;</code></li>
-<li><code>display: flow-root;</code></li>
+</ul>
+<ul>
+<li><code>git checkout &lt;branch&gt;</code><br>切换到另一个分支。注意<strong>没有</strong> <code>--</code> 参数。</li>
+</ul>
+<ul>
+<li>删除文件<ul>
+<li><code>rm &lt;file&gt;</code><br>先删除本地文件。</li>
+<li><code>git rm &lt;file&gt;</code><br>再删除版本库里的文件。这一步类似 <code>git add &lt;file&gt;</code> 操作。</li>
+<li><code>git commit -m &lt;message&gt;</code><br>记得提交，提交后才能真正删除文件。</li>
 </ul>
 </li>
-<li><code>float</code> 或绝对定位（<code>absolute</code>、<code>fixed</code>）的元素的外边距不会被合并。</li>
+</ul>
+<ul>
+<li>误删文件<ul>
+<li><code>git checkout -- &lt;file&gt;</code> 用版本库里的版本替换工作区的版本。因此会丢失最近一次提交后修改的内容。</li>
 </ul>
 </li>
 </ul>
-<h3 id="定义不同的盒模型"><a href="#定义不同的盒模型" class="headerlink" title="定义不同的盒模型"></a>定义不同的盒模型</h3><ul>
-<li><code>box-sizing: border-box</code>：布局比较方便，计算时只需要考虑 <code>width</code> + <code>margin-left</code> + <code>margin-right</code>。真实内容宽度为 <code>width</code> 自动减去 <code>padding</code> 和 <code>border</code>。<ul>
-<li><code>width</code> = <code>content-width</code> + <code>padding-left</code> + <code>padding-right</code> + <code>border-left</code> + <code>border-right</code></li>
-<li><code>height</code> = <code>content-height</code> + <code>padding-top</code> + <code>padding-bottom</code> + <code>border-top</code> + <code>border-bottom</code></li>
+<ul>
+<li>关联本地 Git 仓库和远程仓库<ul>
+<li>本地 Git 仓库和 GitHub 仓库之间的传输是通过 SSH 加密的。</li>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001374385852170d9c7adf13c30429b9660d0eb689dd43a000" target="_blank" rel="noopener">创建SSH Key</a></li>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013752340242354807e192f02a44359908df8a5643103a000" target="_blank" rel="noopener">添加远程库</a><ul>
+<li>远程库的名字: origin</li>
+<li><code>git remote add origin git@server-name:path/repo-name.git</code><br>将本地仓库关联到一个远程库。</li>
+<li><code>git push -u origin master</code><br>第一次推送时加上 <code>-u</code> 参数。<ol>
+<li>将本地 master 分支<strong>内容推送</strong>到远程库的 master 分支。</li>
+<li><strong>关联</strong>本地 master 分支和远程库 master 分支。在以后的推送或者拉取时就可以简化命令。</li>
+</ol>
+</li>
+<li><code>git push</code><br>把当前分支推送到远程。</li>
 </ul>
 </li>
-<li><code>box-sizing: content-box</code>：真实内容宽度为 <code>width</code>，计算时要考虑 <code>padding</code>、<code>border</code>、<code>margin</code>。</li>
-</ul>
-<h3 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h3><ul>
-<li>对于非替换元素的行内元素，其占用空间有 <code>line-height</code> 决定。</li>
-<li>行内元素默认是基线对齐：<code>vertical-align: baseline</code>。</li>
-<li>可替换元素：外观渲染独立于 CSS 的外部对象。<ul>
-<li><code>&lt;img&gt;</code>、<code>&lt;video&gt;</code>、<code>&lt;textarea&gt;</code>、<code>&lt;input&gt;</code> 等</li>
 </ul>
 </li>
-<li><code>&lt;img&gt;</code>、<code>&lt;input&gt;</code>等标签属于替换元素，一般都有内在尺寸和宽高比，可以设定 <code>width</code> 和 <code>height</code>。</li>
 </ul>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Introduction_to_the_CSS_box_model" target="_blank" rel="noopener">Introduction to the CSS basic box model</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/box-sizing" target="_blank" rel="noopener">box-sizing</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Box_Model/Mastering_margin_collapsing" target="_blank" rel="noopener">Mastering margin collapsing</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/clear" target="_blank" rel="noopener">clear</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/Replaced_element" target="_blank" rel="noopener">Replaced element</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/HTML/Inline_elements" target="_blank" rel="noopener">Inline elements</a></li>
-<li><a href="https://developer.mozilla.org/en-US/docs/Web/Guide/CSS/Block_formatting_context" target="_blank" rel="noopener">Block formatting context</a></li>
-<li><a href="https://blog.csdn.net/jlds123/article/details/8647448" target="_blank" rel="noopener">为何img、input等内联元素可以设置宽、高</a></li>
-<li><a href="https://blog.csdn.net/u014727260/article/details/76726370" target="_blank" rel="noopener">行内元素设置宽高</a></li>
-<li><a href="https://juejin.im/post/5a1b7319f265da43333e1d60" target="_blank" rel="noopener">为何img、input等内联元素可设置宽高</a></li>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375233990231ac8cf32ef1b24887a5209f83e01cb94b000" target="_blank" rel="noopener">从远程库克隆</a><ul>
+<li><code>git clone git@server-name:path/repo-name.git</code></li>
+<li><code>cd &quot;repo-name&quot;</code></li>
+<li>Git 支持多种协议，包括 https，但通过 ssh 支持的原生 git 协议速度最快。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840038939c291467cc7c747b1810aab2fb8863508000" target="_blank" rel="noopener">创建与合并分支</a><ul>
+<li>HEAD 指针： 指向<strong>当前</strong>分支。</li>
+<li><code>git checkout -b &lt;branch&gt;</code><br><strong>创建并切换</strong>到新的分支。<code>&lt;branch&gt;</code> 指代分支的名字。<br>相当于以下两条命令<ul>
+<li><code>git branch &lt;branch&gt;</code> <strong>创建</strong>新的分支。</li>
+<li><code>git checkout &lt;branch&gt;</code> <strong>切换</strong>到另一个分支。</li>
+</ul>
+</li>
+<li><code>git branch</code><br>列出<strong>所有</strong>分支。<br>前面标有 * 的是即是当前分支。</li>
+<li><code>git merge &lt;branch&gt;</code><br><strong>合并</strong>指定分支 <code>&lt;branch&gt;</code> 到当前分支。<br>故执行合并 <code>git merge</code> 前，需要先 <code>git checkout</code> 切换到当前分支。</li>
+<li><code>git branch -d &lt;branch&gt;</code><br><strong>删除</strong>分支。</li>
+<li>Git 鼓励使用分支完成某个任务，合并后再删掉分支，这和直接在 master 分支上工作效果是一样的，但过程更安全。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001375840202368c74be33fbd884e71b570f2cc3c0d1dcf000" target="_blank" rel="noopener">解决冲突</a></li>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013758410364457b9e3d821f4244beb0fd69c61a185ae0000" target="_blank" rel="noopener">分支管理策略</a><ul>
+<li><a href="https://cdn.liaoxuefeng.com/cdn/files/attachments/001384909239390d355eb07d9d64305b6322aaf4edac1e3000/0" target="_blank" rel="noopener">团队合作示意图</a></li>
+<li>合并分支时，默认用 Fast forward 模式。该模式下，删除分支后，会丢掉分支信息。</li>
+<li>合并分支时，加上 <code>--no-ff</code> 参数，强制禁用 Fast forward 模式，改用普通模式合并。Git 会在 merge 时生成一个新的 commit，这样，从分支历史上就可以看出分支信息，能看出来曾经做过合并。而 fast forward 合并就看不出来曾经做过合并。</li>
+<li><code>git merge --no-ff -m &lt;message&gt; &lt;branch&gt;</code><br>使用普通模式合并，并提交一个新的 commit。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/00137602359178794d966923e5c4134bc8bf98dfb03aea3000" target="_blank" rel="noopener">Bug 分支</a><ul>
+<li><code>git stash</code><br>把当前工作现场“储藏”起来。<br>此时工作区就被清空了。（working tree clean）</li>
+<li><code>git stash list</code><br>查看被暂存的工作现场。</li>
+<li><strong>恢复</strong>暂存起来的工作现场到工作区<ul>
+<li><code>git stash apply</code> 恢复的同时 stash 内容并不删除。需要用 <code>git stash drop</code> 来删除。</li>
+<li><code>git stash pop</code> 恢复的同时把 stash 内容也删了。</li>
+<li><code>git stash apply stash@{0}</code> 恢复指定的 stash 到工作区。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001376026233004c47f22a16d1f4fa289ce45f14bbc8f11000" target="_blank" rel="noopener">Feature分支</a><ul>
+<li><code>git branch -D &lt;branch&gt;</code> <strong>强制</strong>删除<strong>未合并</strong>的分支。</li>
+<li><code>git branch -d &lt;brabch&gt;</code> 删除已合并的分支。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013760174128707b935b0be6fc4fc6ace66c4f15618f8d000" target="_blank" rel="noopener">多人协作</a><ul>
+<li><code>git remote</code><br>查看远程库信息。<br>加上 <code>-v</code> 参数，可以查看更详细的信息（push、fetch 各自的地址）。</li>
+<li><code>git push origin &lt;branch&gt;</code><br>推送指定的分支到远程库。</li>
+<li><code>git checkout -b &lt;branch&gt; origin/&lt;branch&gt;</code><br>在本地创建和远程分支对应的分支。</li>
+<li><code>git branch --set-upstream-to=origin/&lt;branch&gt; &lt;branch&gt;</code><br>建立本地分支和远程分支的关联。</li>
+<li><code>git pull</code><br>从远程抓取分支。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/0013762144381812a168659b3dd4610b4229d81de5056cc000" target="_blank" rel="noopener">标签管理</a><blockquote>
+<p>标签是版本库的一个快照。<br>标签就是一个让人容易记住的有意义的名字，它跟某个 commit 绑在一起。<br>分支可以移动，标签不能移动。</p>
+</blockquote>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001376951758572072ce1dc172b4178b910d31bc7521ee4000" target="_blank" rel="noopener">创建标签</a><ul>
+<li><code>git tag &lt;tagname&gt;</code> 创建标签。默认为 HEAD，也可以指定一个 commit_id。</li>
+<li><code>git tag</code> 查看所有标签。</li>
+<li><code>git tag -a &lt;tagname&gt; -m &lt;message&gt;</code><br>指定标签信息。默认为 HEAD，也可以指定一个 commit_id。</li>
+<li><code>git show &lt;tagname&gt;</code> 查看标签信息。</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000/001376951885068a0ac7d81c3a64912b35a59b58a1d926b000" target="_blank" rel="noopener">操作标签</a></li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://www.liaoxuefeng.com/wiki/0013739516305929606dd18361248578c67b8067c8c017b000" target="_blank" rel="noopener">Git 教程 - 廖雪峰的官方网站</a></li>
+<li>阮一峰，<a href="http://www.ruanyifeng.com/blog/2015/12/git-cheat-sheet.html" target="_blank" rel="noopener">常用 Git 命令清单</a></li>
+<li>阮一峰，<a href="http://www.ruanyifeng.com/blog/2015/12/git-workflow.html" target="_blank" rel="noopener">Git 工作流程</a></li>
+<li>阮一峰，<a href="http://www.ruanyifeng.com/blog/2015/08/git-use-process.html" target="_blank" rel="noopener">Git 使用规范流程</a></li>
+<li>阮一峰，<a href="http://www.ruanyifeng.com/blog/2014/06/git_remote.html" target="_blank" rel="noopener">Git 远程操作详解</a></li>
 </ul>
 
       
@@ -504,7 +629,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/CSS/" rel="tag"><i class="fa fa-tag"></i> CSS</a>
+            <a href="/tags/Git/" rel="tag"><i class="fa fa-tag"></i> Git</a>
           
         </div>
       
@@ -517,8 +642,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/28/关于-Canvas/" rel="next" title="关于 Canvas">
-                <i class="fa fa-chevron-left"></i> 关于 Canvas
+              <a href="/2018/07/20/浏览器缓存/" rel="next" title="浏览器缓存">
+                <i class="fa fa-chevron-left"></i> 浏览器缓存
               </a>
             
           </div>
@@ -526,10 +651,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/29/CSS-reset-和-CSS-normalize-css/" rel="prev" title="CSS reset 和 CSS normalize.css">
-                CSS reset 和 CSS normalize.css <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
