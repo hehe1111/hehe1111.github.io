@@ -113,25 +113,25 @@
 
 
 
-  <meta name="description" content="关于 this 值的绑定">
-<meta name="keywords" content="JS">
+  <meta name="description" content="探究 attributes 和 property 的区别">
+<meta name="keywords" content="JS,jQuery">
 <meta property="og:type" content="article">
-<meta property="og:title" content="确定 this">
-<meta property="og:url" content="http://yoursite.com/2018/03/30/确定-this/index.html">
+<meta property="og:title" content="jQuery 的 attr() 与 prop() 比较">
+<meta property="og:url" content="http://yoursite.com/2018/07/21/jQuery-的-attr-与-prop-比较/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="关于 this 值的绑定">
+<meta property="og:description" content="探究 attributes 和 property 的区别">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-20T14:15:35.823Z">
+<meta property="og:updated_time" content="2018-07-21T12:13:46.249Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="确定 this">
-<meta name="twitter:description" content="关于 this 值的绑定">
+<meta name="twitter:title" content="jQuery 的 attr() 与 prop() 比较">
+<meta name="twitter:description" content="探究 attributes 和 property 的区别">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/30/确定-this/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/21/jQuery-的-attr-与-prop-比较/"/>
 
 
 
@@ -141,7 +141,7 @@
   };
 </script>
 
-  <title>确定 this | chen - Hexo Blog</title>
+  <title>jQuery 的 attr() 与 prop() 比较 | chen - Hexo Blog</title>
   
 
 
@@ -310,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/30/确定-this/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/21/jQuery-的-attr-与-prop-比较/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chen">
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">确定 this
+          <h1 class="post-title" itemprop="name headline">jQuery 的 attr() 与 prop() 比较
               
             
           </h1>
@@ -352,24 +352,12 @@
                 
               
 
-              <time title="创建时间：2018-03-30 10:50:00" itemprop="dateCreated datePublished" datetime="2018-03-30T10:50:00+08:00">2018-03-30</time>
+              <time title="创建时间：2018-07-21 18:04:38 / 修改时间：20:13:46" itemprop="dateCreated datePublished" datetime="2018-07-21T18:04:38+08:00">2018-07-21</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-20 22:15:35" itemprop="dateModified" datetime="2018-07-20T22:15:35+08:00">2018-07-20</time>
               
             
           </span>
@@ -406,7 +394,7 @@
           
 
           
-              <div class="post-description">关于 this 值的绑定</div>
+              <div class="post-description">探究 attributes 和 property 的区别</div>
           
 
         </div>
@@ -422,20 +410,45 @@
       
 
       
-        <ol>
-<li>fn() 里的 <code>this</code> ：非严格模式是全局对象（浏览器下是 <code>window</code>），严格模式下是 <code>undefined</code>。（window.fn()）</li>
-<li>a.b.c.fn() 里的 <code>this</code> 是 a.b.c。</li>
-<li>new fn() 里的 <code>this</code> 就是新生成的实例对象。</li>
-<li>箭头函数里没有 <code>this</code>。在箭头函数里使用的 <code>this</code> 绑定了外层函数的 <code>this</code>。</li>
-</ol>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
-<li><a href="http://javascript.ruanyifeng.com/oop/this.html" target="_blank" rel="noopener">this 关键字</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/23804247" target="_blank" rel="noopener">this 的值到底是什么？一次说清楚</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/23987456" target="_blank" rel="noopener">JS 的 new 到底是干什么的？</a></li>
-<li><a href="https://yuchengkai.cn/docs/zh/frontend/#this" target="_blank" rel="noopener">InterviewMap</a></li>
+        <p>attributes：<strong>HTML 标签</strong>属性。标签（元素）属性节点。<br>property：<strong>DOM 对象</strong>属性。<br>以上来源：<a href="http://www.w3help.org/zh-cn/causes/SD9006" target="_blank" rel="noopener">SD9006: IE 混淆了 DOM 对象属性（property）及 HTML 标签属性（attribute），造成了对 setAttribute、getAttribute 的不正确实现</a></p>
+<p>下面这一段引自 jQuery 中文文档 <a href="https://www.jquery123.com/attr/" target="_blank" rel="noopener">.attr()</a>。关于 attributes 和 property 的翻译存在前后不同一的现象。</p>
+<blockquote>
+<h2 id="Attributes-vs-Properties"><a href="#Attributes-vs-Properties" class="headerlink" title="Attributes vs. Properties"></a>Attributes vs. Properties</h2><p>attributes 和 properties 之间的差异在特定情况下是很重要。jQuery 1.6 之前 ，<code>.attr()</code> 方法在取某些 attribute 的值时，会返回 property 的值，这就导致了结果的不一致。从 jQuery 1.6 开始，<code>.prop()</code> 方法返回 property 的值,而 <code>.attr()</code> 方法返回 attributes 的值。</p>
+<p>例如, <code>selectedIndex</code>, <code>tagName</code>, <code>nodeName</code>, <code>nodeType</code>, <code>ownerDocument</code>, <code>defaultChecked</code>, 和 <code>defaultSelected</code> <strong>应使用 <code>.prop()</code> 方法进行取值或赋值</strong>。 在 jQuery1.6 之前，这些属性使用 <code>.attr()</code> 方法取得，但是这并不是元素的 attr 属性。他们<strong>没有相应的属性（attributes），只有特性（property）</strong>。</p>
+<p>例如，考虑一个 DOM 元素的 HTML 标记中定义的 <code>&lt;input type=&quot;checkbox&quot; checked=&quot;checked&quot; /&gt;</code>，并假设它是一个 JavaScript 变量命名的 <code>elem</code>：</p>
+<p><code>elem.checked</code>    true (Boolean) 将随着复选框状态的改变而改变<br><code>$(elem).prop(&quot;checked&quot;)</code>    true (Boolean) 将随着复选框状态的改变而改变<br><code>elem.getAttribute(&quot;checked&quot;)</code>    “checked” (String) 复选框的初始状态;不会改变<br><code>$(elem).attr(&quot;checked&quot;) (1.6)</code>    “checked” (String) 复选框的初始状态;不会改变<br><code>$(elem).attr(&quot;checked&quot;) (1.6.1+)</code>    “checked” (String) 将随着复选框状态的改变而改变<br><code>$(elem).attr(&quot;checked&quot;) (pre-1.6)</code>    true (Boolean) 将随着复选框状态的改变而改变</p>
+<p>根据 <a href="https://www.w3.org/TR/html401/interact/forms.html#h-17.4" target="_blank" rel="noopener">W3C 的表单规范</a>，在 <code>checked</code> 属性是一个布尔属性，这意味着,如果这个属性（attribute）是目前存在， 即使，该属性没有对应的值，或者被设置为空字符串值，或甚至是”false”，<strong>相应的属性（property）为 true</strong>。 这才是真正的所有布尔属性（attributes）。</p>
+<p>然而，要记住的最重要的概念是 <code>checked</code> 特性（attribute）<strong>不对应</strong> <code>checked</code> 属性（property）。<strong>特性（attribute）实际对应的是 <code>defaultChecked</code> 属性（property），而且仅用于设置复选框最初的值</strong>。 <code>checked</code> 特性（attribute）值<strong>不会</strong>因为复选框的状态而改变，而 <code>checked</code> 属性（property）<strong>会</strong>因为复选框的状态而改变。因此，<strong>跨浏览器兼容的方法来确定一个复选框是否被选中，是使用属性（property）</strong>：</p>
+<p><code>if ( elem.checked )</code><br><code>if ( $(elem).prop(&quot;checked&quot;) )</code><br><code>if ( $(elem).is(&quot;:checked&quot;) )</code><br>对于其他的动态属性，同样是 <code>true</code> ，比如 <code>selected</code> 和 <code>value</code>.</p>
+</blockquote>
+<p>下面一段引自 <a href="http://www.cnblogs.com/dolphinX/p/3348582.html" target="_blank" rel="noopener">jQuery 的 attr 与 prop</a>，与上面一段是同一内容的不同翻译，下面这一段意思更清晰。</p>
+<blockquote>
+<p>根据 W3C forms specification ， <code>checked</code> 属性是一个布尔值，这就意味着<strong>只要 <code>checked</code> 属性在HTML中表现出来了，那么相应的 <code>property</code> 就应该是 <code>true</code>，即使 <code>checked</code> 没有值，这点儿对其它布尔类型的属性一样适用</strong>。</p>
+<p>然而关于 <code>checked</code> 属性需要记住的最重要的一点是：它和 <code>checked</code> property 并不是一致的。实际上这个 attribute 和 <code>defaultChecked</code> property一致，而且只应该用来设置 <code>check box</code> 的初始值。 <code>checked</code> attribute 并不随着 <code>check box</code> 的状态而改变，但是 <code>checked</code> property 却跟着变。因此浏览器兼容的判断 <code>check box</code> 是否被选中应该使用 property。</p>
+<p>这对其它一些类似于 <code>selected</code>、<code>value</code> 这样的动态 attribute 也适用。</p>
+<p>在 IE9 之前版本中，如果 property 没有在 DOM 元素被移除之前删除，使用 <code>.prop()</code> 方法设置 DOM 元素 property（简单类型除外：<code>number</code>、<code>string</code>、<code>boolean</code>）的值会导致内存泄露。为了安全的设置 DOM 对象的值，避免内存泄露，可以使用 <code>.data()</code> 方法。</p>
+</blockquote>
+<ul>
+<li><a href="https://images0.cnblogs.com/blog/349217/201310/01161403-fe084d378286479197d9008fb62ff5c7.png" target="_blank" rel="noopener">如何选用 attr() 和 prop() 示意图</a></li>
 </ul>
-<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><ul>
-<li><a href="https://hehe1111.github.io/2018/03/14/%E7%BB%91%E5%AE%9Athis/" target="_blank" rel="noopener">绑定this</a></li>
+<ul>
+<li>固有 HTML 标签属性用 <code>prop()</code></li>
+<li>固有、自定义 HTML 标签属性都可以用 <code>attr()</code></li>
+<li>自定义 HTML 标签属性只能用 <code>attr()</code></li>
+<li>未显式定义的属性，<code>attr()</code> 返回 <code>undefined</code>，<code>prop()</code> 返回空字符串</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- HTML --&gt;</span></span><br><span class="line"><span class="comment">&lt;!-- 已经引入 jQuery --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"test"</span> <span class="attr">index</span>=<span class="string">"index"</span>&gt;</span><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// JavaScript</span></span><br><span class="line"><span class="keyword">var</span> test = $(<span class="string">'.test'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取已显式定义的属性</span></span><br><span class="line"><span class="built_in">console</span>.log(test.prop(<span class="string">'class'</span>)) <span class="comment">// test</span></span><br><span class="line"><span class="built_in">console</span>.log(test.prop(<span class="string">'className'</span>)) <span class="comment">// test</span></span><br><span class="line"><span class="built_in">console</span>.log(test.attr(<span class="string">'class'</span>)) <span class="comment">// test</span></span><br><span class="line"><span class="built_in">console</span>.log(test.attr(<span class="string">'className'</span>)) <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(test.prop(<span class="string">'index'</span>)) <span class="comment">// undefined</span></span><br><span class="line"><span class="built_in">console</span>.log(test.attr(<span class="string">'index'</span>)) <span class="comment">// index</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 获取未显式定义的属性</span></span><br><span class="line"><span class="keyword">var</span> s = test.prop(<span class="string">'title'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(s) <span class="comment">// ''</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> s) <span class="comment">// 'string'</span></span><br><span class="line"><span class="built_in">console</span>.log(test.attr(<span class="string">'title'</span>)) <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置自定义属性</span></span><br><span class="line">test.attr(<span class="string">'diy'</span>, <span class="string">'diy'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(test.attr(<span class="string">'diy'</span>)) <span class="comment">// diy</span></span><br><span class="line"><span class="built_in">console</span>.log(test.prop(<span class="string">'diy'</span>)) <span class="comment">// undefined</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 设置固有属性</span></span><br><span class="line">test.attr(<span class="string">'id'</span>, <span class="string">'test-id'</span>)</span><br><span class="line"><span class="built_in">console</span>.log(test.attr(<span class="string">'id'</span>)) <span class="comment">// test-id</span></span><br><span class="line"><span class="built_in">console</span>.log(test.prop(<span class="string">'id'</span>)) <span class="comment">// test-id</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(test[<span class="number">0</span>])</span><br><span class="line"><span class="comment">// &lt;div class="test" index="index" diy="diy" id="test-id"&gt;&lt;/div&gt;</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>具有 <code>true</code> 和 <code>false</code> 两个属性值的属性，如 <code>checked</code>, <code>selected</code> 或者 <code>disabled</code> 使用 <code>prop()</code>，其他的使用 <code>attr()</code>。[*]</p>
+</blockquote>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://api.jquery.com/attr/" target="_blank" rel="noopener">.attr()</a>（英文）</li>
+<li><a href="https://www.jquery123.com/attr/" target="_blank" rel="noopener">.attr()</a>（中文）</li>
+<li><a href="http://www.w3help.org/zh-cn/causes/SD9006" target="_blank" rel="noopener">SD9006: IE 混淆了 DOM 对象属性（property）及 HTML 标签属性（attribute），造成了对 setAttribute、getAttribute 的不正确实现</a></li>
+<li><a href="http://www.cnblogs.com/dolphinX/p/3348582.html" target="_blank" rel="noopener">jQuery 的 attr 与 prop</a></li>
+<li><a href="https://blog.csdn.net/qq_35809245/article/details/54389797" target="_blank" rel="noopener">jquery 属性操作 attr() prop () css() 区别</a></li>
+<li>[*] <a href="http://www.cnblogs.com/zhwl/p/3520162.html" target="_blank" rel="noopener">jQuery 中 attr() 和 prop() 方法的区别</a></li>
 </ul>
 
       
@@ -470,6 +483,8 @@
           
             <a href="/tags/JS/" rel="tag"><i class="fa fa-tag"></i> JS</a>
           
+            <a href="/tags/jQuery/" rel="tag"><i class="fa fa-tag"></i> jQuery</a>
+          
         </div>
       
 
@@ -481,8 +496,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/30/JSONP/" rel="next" title="JSONP">
-                <i class="fa fa-chevron-left"></i> JSONP
+              <a href="/2018/07/21/Git-教程学习笔记/" rel="next" title="Git 教程学习笔记">
+                <i class="fa fa-chevron-left"></i> Git 教程学习笔记
               </a>
             
           </div>
@@ -490,10 +505,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/30/立即执行函数-IIFE/" rel="prev" title="立即执行函数">
-                立即执行函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
