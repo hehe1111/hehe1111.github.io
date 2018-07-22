@@ -113,25 +113,25 @@
 
 
 
-  <meta name="description" content="博客配置">
-<meta name="keywords" content="博客配置">
+  <meta name="description" content="Sass 使用记录">
+<meta name="keywords" content="Sass&#x2F;Scss">
 <meta property="og:type" content="article">
-<meta property="og:title" content="开启阅读全文按钮功能">
-<meta property="og:url" content="http://yoursite.com/2018/03/14/开启阅读全文按钮功能/index.html">
+<meta property="og:title" content="使用 Sass">
+<meta property="og:url" content="http://yoursite.com/2018/07/22/使用-Sass/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="博客配置">
+<meta property="og:description" content="Sass 使用记录">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-14T06:28:50.404Z">
+<meta property="og:updated_time" content="2018-07-22T06:33:40.573Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="开启阅读全文按钮功能">
-<meta name="twitter:description" content="博客配置">
+<meta name="twitter:title" content="使用 Sass">
+<meta name="twitter:description" content="Sass 使用记录">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/14/开启阅读全文按钮功能/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/22/使用-Sass/"/>
 
 
 
@@ -141,7 +141,7 @@
   };
 </script>
 
-  <title>开启阅读全文按钮功能 | chen - Hexo Blog</title>
+  <title>使用 Sass | chen - Hexo Blog</title>
   
 
 
@@ -310,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/开启阅读全文按钮功能/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/22/使用-Sass/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chen">
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">开启阅读全文按钮功能
+          <h1 class="post-title" itemprop="name headline">使用 Sass
               
             
           </h1>
@@ -352,24 +352,12 @@
                 
               
 
-              <time title="创建时间：2018-03-14 16:01:23" itemprop="dateCreated datePublished" datetime="2018-03-14T16:01:23+08:00">2018-03-14</time>
+              <time title="创建时间：2018-07-22 08:56:11 / 修改时间：14:33:40" itemprop="dateCreated datePublished" datetime="2018-07-22T08:56:11+08:00">2018-07-22</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-06-14 14:28:50" itemprop="dateModified" datetime="2018-06-14T14:28:50+08:00">2018-06-14</time>
               
             
           </span>
@@ -386,7 +374,7 @@
                 <span class="post-meta-item-text">分类于</span>
               
               
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/配置/" itemprop="url" rel="index"><span itemprop="name">配置</span></a></span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing"><a href="/categories/前端/" itemprop="url" rel="index"><span itemprop="name">前端</span></a></span>
 
                 
                 
@@ -406,7 +394,7 @@
           
 
           
-              <div class="post-description">博客配置</div>
+              <div class="post-description">Sass 使用记录</div>
           
 
         </div>
@@ -422,18 +410,40 @@
       
 
       
-        <h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><ol>
-<li><p>编辑主题的 <code>_config.yml</code> ，修改 <code>Post Settings</code> 里的设置，如下：</p>
- <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"><span class="comment"># Post Settings</span></span><br><span class="line"><span class="comment"># ---------------------------------------------------------------</span></span><br><span class="line"></span><br><span class="line"><span class="string">...</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Automatically excerpt description in homepage as preamble text.</span></span><br><span class="line"><span class="attr">excerpt_description:</span> <span class="literal">true</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Automatically Excerpt. Not recommend.</span></span><br><span class="line"><span class="comment"># Please use &lt;!-- more --&gt; in the post to control excerpt accurately.</span></span><br><span class="line"><span class="attr">auto_excerpt:</span></span><br><span class="line"><span class="attr">  enable:</span> <span class="literal">true</span></span><br><span class="line"><span class="attr">  length:</span> <span class="number">50</span> <span class="comment"># 默认在首页显示的文章内容长度，可根据需要修改</span></span><br></pre></td></tr></table></figure>
+        <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
+<li>使用 Sass 需要先安装 Ruby</li>
+<li>也可以选择用 node-sass，使用 node-sass 不要求先安装 Ruby。</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm i node-sass</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 或者通过 cnpm 安装</span><br><span class="line"><span class="meta">$</span> cnpm i node-sass</span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><ol>
+<li>Sass 与 Scss 的语法存在些许差异，使用时需要注意。</li>
+<li>Sass 用缩进来表示层级嵌套。像 Python 一样。另外，使用 <code>&amp;</code> 在嵌套中来引用父元素，如 <code>a:hover</code>，可以写成 <code>&amp;:hover</code> ，<code>&amp;:hover</code> 需要嵌套到 <code>a</code> 下。</li>
+<li>Sass 不用大括号。</li>
+<li>Sass 不用在每一行样式后加上分号。</li>
+<li>在 Sass 中，仍可以使用媒体查询语句 <code>@media</code>，像在 CSS 中一样。</li>
+<li>以下划线命名开头的文件（如：_partial.sass），不会被输出，可以通过 <code>@import</code> 导入其他 .sass 文件。</li>
+<li>在 .sass 文件开头通过 <code>@import</code> 导入其他文件：<code>@import &quot;partial&quot;</code>。可以看到，文件名开头可以不用加下划线，也不用加后缀 .sass。但为方便追踪查看导入的相关文件，推荐保持文件名一致，同时，将相对路径明确写全，即 <code>@import &quot;./_partial.sass&quot;</code>，而不只是 <code>@import &quot;_partial.sass&quot;</code>。</li>
+<li>可以在 .sass 文件开头，通过 <code>@import</code> 引入普通的 .css 文件。如：<code>@import &quot;pathname/filename.css&quot;</code>。这一句经过转换，在由 .sass 文件生成的 .css 文件中，是 <code>@import url(pathname/filename.css);</code></li>
+<li><p>编译</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sass input.sass output.css</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 如果是使用 node-sass，将 sass 换成 node-sass 即可</span><br><span class="line"><span class="meta">$</span> node-sass input.sass output.css</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> SASS提供四个编译风格的选项</span><br><span class="line"><span class="meta">#</span> nested：嵌套缩进，默认值</span><br><span class="line"><span class="meta">#</span> expanded：扩展</span><br><span class="line"><span class="meta">#</span> compact：简洁格式</span><br><span class="line"><span class="meta">#</span> compressed：压缩格式，一般用于生产环境</span><br><span class="line"><span class="meta">$</span> node-sass --style compressed input.sass output.css</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>也可以在写作过程中，手动在文章里添加 <code>&lt;!--more--&gt;</code> 标记。在首页显示时，就只会显示标记前的部分，点击<strong>阅读全文</strong>按钮才能看到全文。</p>
+<li><p>监听文件（夹）的变动</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> 监听文件</span><br><span class="line"><span class="meta">#</span> 加上 --watch 参数即可，简写 -w</span><br><span class="line"><span class="meta">$</span> node-sass --watch input.sass output.css</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 监听文件夹</span><br><span class="line"><span class="meta">#</span> 除了 --watch，还需要加上 --output 参数，简写 -o</span><br><span class="line"><span class="meta">$</span> node-sass --watch inputPath/sass -o outputPath/css</span><br></pre></td></tr></table></figure>
 </li>
-<li><p>或者在 markdown 头部的 Front-matter 里面加入 description 字段。优先会使用 description 字段的内容。</p>
+<li><p>变量以 <code>$</code> 开头，通过 <code>#{$变量名}</code> 可以镶嵌到字符串中。</p>
+</li>
+<li>混合通过 <code>@mixin</code> 定义，使用时通过 <code>@include</code> 调用。<code>@mixin</code> 可以传入默认参数。</li>
+<li>函数通过 <code>@function</code> 定义。</li>
+<li>注释<ol>
+<li><code>/* 注释 */</code> 风格的注释会<strong>被保留</strong>到生成的 .css 文件中</li>
+<li><code>// 注释</code> 风格的注释<strong>不会</strong>被保留到生成的 .css 文件中</li>
+</ol>
 </li>
 </ol>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="https://twiceyuan.com/2014/05/25/hexo%E8%87%AA%E5%8A%A8%E6%B7%BB%E5%8A%A0readmore%E6%A0%87%E8%AE%B0/" target="_blank" rel="noopener">Hexo 自动添加 Read More 标记</a></li>
-<li><a href="https://github.com/iissnan/hexo-theme-next/issues/62" target="_blank" rel="noopener">请问如何设置read more? </a></li>
+<li><a href="http://www.ruanyifeng.com/blog/2012/06/sass.html" target="_blank" rel="noopener">SASS用法指南</a></li>
+<li><a href="https://beginor.github.io/2014/07/11/introduction-to-scss.html" target="_blank" rel="noopener">Scss (Sass) 语法简介</a></li>
+<li><a href="http://sass-lang.com/documentation/file.SASS_REFERENCE.html" target="_blank" rel="noopener">Sass (Syntactically Awesome StyleSheets)</a></li>
 </ul>
 
       
@@ -466,7 +476,7 @@
       
         <div class="post-tags">
           
-            <a href="/tags/博客配置/" rel="tag"><i class="fa fa-tag"></i> 博客配置</a>
+            <a href="/tags/Sass-Scss/" rel="tag"><i class="fa fa-tag"></i> Sass/Scss</a>
           
         </div>
       
@@ -479,8 +489,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/14/创建about页面/" rel="next" title="创建about页面">
-                <i class="fa fa-chevron-left"></i> 创建about页面
+              <a href="/2018/07/21/jQuery-的-attr-与-prop-比较/" rel="next" title="jQuery 的 attr() 与 prop() 比较">
+                <i class="fa fa-chevron-left"></i> jQuery 的 attr() 与 prop() 比较
               </a>
             
           </div>
@@ -488,10 +498,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/14/移动端适配方案参考/" rel="prev" title="移动端适配方案参考">
-                移动端适配方案参考 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
