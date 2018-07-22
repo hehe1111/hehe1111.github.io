@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="Sass 使用记录">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-22T06:33:40.573Z">
+<meta property="og:updated_time" content="2018-07-22T07:35:14.876Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="使用 Sass">
 <meta name="twitter:description" content="Sass 使用记录">
@@ -352,7 +352,7 @@
                 
               
 
-              <time title="创建时间：2018-07-22 08:56:11 / 修改时间：14:33:40" itemprop="dateCreated datePublished" datetime="2018-07-22T08:56:11+08:00">2018-07-22</time>
+              <time title="创建时间：2018-07-22 08:56:11 / 修改时间：15:35:14" itemprop="dateCreated datePublished" datetime="2018-07-22T08:56:11+08:00">2018-07-22</time>
             
 
             
@@ -411,7 +411,7 @@
 
       
         <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><ol>
-<li>使用 Sass 需要先安装 Ruby</li>
+<li>使用 Sass 需要先安装 Ruby。</li>
 <li>也可以选择用 node-sass，使用 node-sass 不要求先安装 Ruby。</li>
 </ol>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> npm i node-sass</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 或者通过 cnpm 安装</span><br><span class="line"><span class="meta">$</span> cnpm i node-sass</span><br></pre></td></tr></table></figure>
@@ -423,7 +423,7 @@
 <li>在 Sass 中，仍可以使用媒体查询语句 <code>@media</code>，像在 CSS 中一样。</li>
 <li>以下划线命名开头的文件（如：_partial.sass），不会被输出，可以通过 <code>@import</code> 导入其他 .sass 文件。</li>
 <li>在 .sass 文件开头通过 <code>@import</code> 导入其他文件：<code>@import &quot;partial&quot;</code>。可以看到，文件名开头可以不用加下划线，也不用加后缀 .sass。但为方便追踪查看导入的相关文件，推荐保持文件名一致，同时，将相对路径明确写全，即 <code>@import &quot;./_partial.sass&quot;</code>，而不只是 <code>@import &quot;_partial.sass&quot;</code>。</li>
-<li>可以在 .sass 文件开头，通过 <code>@import</code> 引入普通的 .css 文件。如：<code>@import &quot;pathname/filename.css&quot;</code>。这一句经过转换，在由 .sass 文件生成的 .css 文件中，是 <code>@import url(pathname/filename.css);</code></li>
+<li>可以在 .sass 文件开头，通过 <code>@import</code> 引入普通的 .css 文件。如：<code>@import &quot;pathname/filename.css&quot;</code>。这一句经过转换，在由 .sass 文件生成的 .css 文件中，是 <code>@import url(pathname/filename.css);</code>。</li>
 <li><p>编译</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span> sass input.sass output.css</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 如果是使用 node-sass，将 sass 换成 node-sass 即可</span><br><span class="line"><span class="meta">$</span> node-sass input.sass output.css</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> SASS提供四个编译风格的选项</span><br><span class="line"><span class="meta">#</span> nested：嵌套缩进，默认值</span><br><span class="line"><span class="meta">#</span> expanded：扩展</span><br><span class="line"><span class="meta">#</span> compact：简洁格式</span><br><span class="line"><span class="meta">#</span> compressed：压缩格式，一般用于生产环境</span><br><span class="line"><span class="meta">$</span> node-sass --style compressed input.sass output.css</span><br></pre></td></tr></table></figure>
 </li>
@@ -433,10 +433,11 @@
 <li><p>变量以 <code>$</code> 开头，通过 <code>#{$变量名}</code> 可以镶嵌到字符串中。</p>
 </li>
 <li>混合通过 <code>@mixin</code> 定义，使用时通过 <code>@include</code> 调用。<code>@mixin</code> 可以传入默认参数。</li>
+<li>继承允许在一个选择器上应用另一个选择器的样式。通过 <code>@extend</code> 使用继承。</li>
 <li>函数通过 <code>@function</code> 定义。</li>
 <li>注释<ol>
-<li><code>/* 注释 */</code> 风格的注释会<strong>被保留</strong>到生成的 .css 文件中</li>
-<li><code>// 注释</code> 风格的注释<strong>不会</strong>被保留到生成的 .css 文件中</li>
+<li><code>/* 注释 */</code> 风格的注释会<strong>被保留</strong>到生成的 .css 文件中。</li>
+<li><code>// 注释</code> 风格的注释<strong>不会</strong>被保留到生成的 .css 文件中。</li>
 </ol>
 </li>
 </ol>
