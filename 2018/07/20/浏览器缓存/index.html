@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="良好的浏览器缓存策略可以降低资源的重复加载，提高网页加载速度，改善用户体验">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-22T14:19:26.002Z">
+<meta property="og:updated_time" content="2018-07-25T15:37:13.259Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="浏览器缓存">
 <meta name="twitter:description" content="良好的浏览器缓存策略可以降低资源的重复加载，提高网页加载速度，改善用户体验">
@@ -369,7 +369,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-22 22:19:26" itemprop="dateModified" datetime="2018-07-22T22:19:26+08:00">2018-07-22</time>
+                <time title="修改时间：2018-07-25 23:37:13" itemprop="dateModified" datetime="2018-07-25T23:37:13+08:00">2018-07-25</time>
               
             
           </span>
@@ -423,11 +423,11 @@
 
       
         <h2 id="强缓存"><a href="#强缓存" class="headerlink" title="强缓存"></a>强缓存</h2><ul>
-<li><code>Cache-Control</code></li>
-<li><code>Expires</code></li>
+<li><code>Cache-Control</code>：<strong>多久</strong>过期。<code>Cache-Control</code> 优先于 <code>Expires</code> 字段。</li>
+<li><code>Expires</code>：<strong>何时</strong>过期，受限于本地时间。如果本地时间超前（比如本地时间是现在的 10 年后），可能会导致缓存一直处于失效状态。</li>
 </ul>
 <h2 id="协商缓存"><a href="#协商缓存" class="headerlink" title="协商缓存"></a>协商缓存</h2><ul>
-<li><code>Last-Modified</code> 和 <code>If-Modified-Since</code></li>
+<li><code>Last-Modified</code> 和 <code>If-Modified-Since</code>：本地仅是打开缓存文件，也会修改 <code>Last-Modified</code>，因此出现了 <code>ETag</code>。</li>
 <li><code>ETag</code> 和 <code>If-None-Match</code></li>
 </ul>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
@@ -744,7 +744,7 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">chen</span>
-  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 22.4k 字</span>
+  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 22.5k 字</span>
 
   
 
