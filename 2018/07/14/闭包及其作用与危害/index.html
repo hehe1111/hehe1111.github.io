@@ -116,14 +116,14 @@
   <meta name="description" content="关于闭包">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="闭包及其作用">
-<meta property="og:url" content="http://yoursite.com/2018/03/14/闭包及其作用/index.html">
+<meta property="og:title" content="闭包及其作用与危害">
+<meta property="og:url" content="http://yoursite.com/2018/07/14/闭包及其作用与危害/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="关于闭包">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-20T14:14:21.040Z">
+<meta property="og:updated_time" content="2018-07-25T14:05:05.870Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="闭包及其作用">
+<meta name="twitter:title" content="闭包及其作用与危害">
 <meta name="twitter:description" content="关于闭包">
 
 
@@ -131,7 +131,7 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/14/闭包及其作用/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/14/闭包及其作用与危害/"/>
 
 
 
@@ -141,7 +141,7 @@
   };
 </script>
 
-  <title>闭包及其作用 | chen - Hexo Blog</title>
+  <title>闭包及其作用与危害 | chen - Hexo Blog</title>
   
 
 
@@ -310,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/14/闭包及其作用/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/14/闭包及其作用与危害/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chen">
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">闭包及其作用
+          <h1 class="post-title" itemprop="name headline">闭包及其作用与危害
               
             
           </h1>
@@ -352,7 +352,7 @@
                 
               
 
-              <time title="创建时间：2018-03-14 22:41:53" itemprop="dateCreated datePublished" datetime="2018-03-14T22:41:53+08:00">2018-03-14</time>
+              <time title="创建时间：2018-07-14 22:41:53" itemprop="dateCreated datePublished" datetime="2018-07-14T22:41:53+08:00">2018-07-14</time>
             
 
             
@@ -369,7 +369,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-20 22:14:21" itemprop="dateModified" datetime="2018-07-20T22:14:21+08:00">2018-07-20</time>
+                <time title="修改时间：2018-07-25 22:05:05" itemprop="dateModified" datetime="2018-07-25T22:05:05+08:00">2018-07-25</time>
               
             
           </span>
@@ -423,14 +423,17 @@
 
       
         <h2 id="什么是闭包"><a href="#什么是闭包" class="headerlink" title="什么是闭包"></a>什么是闭包</h2><p>理解闭包，首先必须理解变量作用域。JavaScript 有两种作用域：全局作用域和函数作用域（ES6 引入了块级作用域，故目前存在三种作用域）。函数内部可以直接读取全局变量。但是，函数外部无法读取函数内部声明的变量。在函数内再嵌套一个函数，内层函数就可以访问在外层函数定义的变量，反过来就不行，外层函数无法访问内层函数的变量。这个内层函数 + 内层函数内部能访问到的外部变量的总和就是闭包。简而言之，当函数可以<strong>记住并访问所在的词法作用域</strong>时，就产生了闭包。</p>
-<p>闭包其实是函数作用域嵌套的副产品。</p>
+<p>闭包其实是<strong>函数作用域嵌套</strong>的副产品。</p>
 <h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><ul>
 <li>可以读取函数内部的变量</li>
-<li>让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在</li>
+<li>让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在，这也是闭包潜在的危害根源。</li>
 </ul>
-<p>举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">'这就是闭包'</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123; <span class="comment">// fn2 函数可以访问在 fn1 函数里定义的变量 a</span></span><br><span class="line">        <span class="built_in">console</span>.log(a); </span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp = fn1();</span><br><span class="line">temp(); <span class="comment">// '这就是闭包'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn4</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ++n;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp2 = fn3(<span class="number">-1</span>);</span><br><span class="line">temp2(); <span class="comment">// 0</span></span><br><span class="line">temp2(); <span class="comment">// 1</span></span><br><span class="line">temp2(); <span class="comment">// 2</span></span><br><span class="line">temp2(); <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 闭包使变量 n 一直存在于内存中</span></span><br><span class="line"><span class="comment">// 每次 temp2() 调用都是在前一次调用的基础基础上进行计算</span></span><br></pre></td></tr></table></figure></p>
+<p>举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">'这就是闭包'</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123; <span class="comment">// fn2 函数可以访问在 fn1 函数里定义的变量 a</span></span><br><span class="line">        <span class="built_in">console</span>.log(a)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp = fn1()</span><br><span class="line">temp() <span class="comment">// '这就是闭包'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn4</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n += <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp2 = fn3(<span class="number">-1</span>)</span><br><span class="line">temp2() <span class="comment">// 0</span></span><br><span class="line">temp2() <span class="comment">// 1</span></span><br><span class="line">temp2() <span class="comment">// 2</span></span><br><span class="line">temp2() <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 闭包使变量 n 一直存在于内存中</span></span><br><span class="line"><span class="comment">// 每次 temp2() 调用都是在前一次调用的基础基础上进行计算</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>外层函数每次运行，都会生成一个新的闭包，而这个闭包又会保留外层函数的内部变量，所以内存消耗很大。因此不能滥用闭包，否则会造成网页的性能问题。 – 阮一峰，JavaScript 教程</p>
+</blockquote>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
-<li><a href="http://javascript.ruanyifeng.com/grammar/function.html#toc22" target="_blank" rel="noopener">函数 - 闭包</a></li>
+<li><a href="https://wangdoc.com/javascript/types/function.html#%E9%97%AD%E5%8C%85" target="_blank" rel="noopener">函数 - 闭包</a></li>
 <li><a href="https://github.com/getify/You-Dont-Know-JS/blob/master/scope%20%26%20closures/ch5.md#you-dont-know-js-scope--closures" target="_blank" rel="noopener">You Don’t Know JS: Scope &amp; Closures</a></li>
 <li>你不知道的 JavaScript · 上卷 - 作用域闭包（Kyle Simpson 著，赵望野 梁杰 译）</li>
 <li><a href="https://zhuanlan.zhihu.com/p/22486908" target="_blank" rel="noopener">「每日一题」JS 中的闭包是什么？</a></li>
@@ -480,8 +483,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/14/CSS3实现圆角矩形和阴影/" rel="next" title="CSS3实现圆角矩形和阴影">
-                <i class="fa fa-chevron-left"></i> CSS3实现圆角矩形和阴影
+              <a href="/2018/06/30/update-NexT-from-v5-1-x-to-v6-0-x/" rel="next" title="update NexT from v5.1.x to v6.0.x">
+                <i class="fa fa-chevron-left"></i> update NexT from v5.1.x to v6.0.x
               </a>
             
           </div>
@@ -490,8 +493,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/14/记录部分HTTP状态码/" rel="prev" title="记录部分HTTP状态码">
-                记录部分HTTP状态码 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/07/20/斐波那契数列/" rel="prev" title="斐波那契数列">
+                斐波那契数列 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -916,6 +919,9 @@
   
 
   
+  <script type="text/javascript" src="/js/src/js.cookie.js?v=6.3.0"></script>
+  <script type="text/javascript" src="/js/src/scroll-cookie.js?v=6.3.0"></script>
+
 
   
 
