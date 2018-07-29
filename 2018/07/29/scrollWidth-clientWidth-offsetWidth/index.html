@@ -113,25 +113,25 @@
 
 
 
-  <meta name="description" content="关于 this 值的绑定">
+  <meta name="description" content="简记区别">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
-<meta property="og:title" content="确定 this">
-<meta property="og:url" content="http://yoursite.com/2018/06/30/确定-this/index.html">
+<meta property="og:title" content="scrollWidth&#x2F;clientWidth&#x2F;offsetWidth">
+<meta property="og:url" content="http://yoursite.com/2018/07/29/scrollWidth-clientWidth-offsetWidth/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="关于 this 值的绑定">
+<meta property="og:description" content="简记区别">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-25T22:58:18.858Z">
+<meta property="og:updated_time" content="2018-07-29T04:07:37.824Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="确定 this">
-<meta name="twitter:description" content="关于 this 值的绑定">
+<meta name="twitter:title" content="scrollWidth&#x2F;clientWidth&#x2F;offsetWidth">
+<meta name="twitter:description" content="简记区别">
 
 
 
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/30/确定-this/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/29/scrollWidth-clientWidth-offsetWidth/"/>
 
 
 
@@ -141,7 +141,7 @@
   };
 </script>
 
-  <title>确定 this | chen - Hexo Blog</title>
+  <title>scrollWidth/clientWidth/offsetWidth | chen - Hexo Blog</title>
   
 
 
@@ -310,7 +310,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/30/确定-this/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/29/scrollWidth-clientWidth-offsetWidth/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="chen">
@@ -327,7 +327,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">确定 this
+          <h1 class="post-title" itemprop="name headline">scrollWidth/clientWidth/offsetWidth
               
             
           </h1>
@@ -352,24 +352,12 @@
                 
               
 
-              <time title="创建时间：2018-06-30 10:50:00" itemprop="dateCreated datePublished" datetime="2018-06-30T10:50:00+08:00">2018-06-30</time>
+              <time title="创建时间：2018-07-29 11:53:26 / 修改时间：12:07:37" itemprop="dateCreated datePublished" datetime="2018-07-29T11:53:26+08:00">2018-07-29</time>
             
 
             
               
 
-              
-                
-                <span class="post-meta-divider">|</span>
-                
-
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-calendar-check-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">更新于</span>
-                
-                <time title="修改时间：2018-07-26 06:58:18" itemprop="dateModified" datetime="2018-07-26T06:58:18+08:00">2018-07-26</time>
               
             
           </span>
@@ -406,7 +394,7 @@
           
 
           
-              <div class="post-description">关于 this 值的绑定</div>
+              <div class="post-description">简记区别</div>
           
 
         </div>
@@ -422,25 +410,18 @@
       
 
       
-        <h2 id="为什么要使用-this？"><a href="#为什么要使用-this？" class="headerlink" title="为什么要使用 this？"></a>为什么要使用 <code>this</code>？</h2><p>在函数内部，用 this 来指代当前的运行环境。</p>
-<blockquote>
-<p>JavaScript 允许在函数体内部，引用当前环境的其他变量。</p>
-<p>由于函数可以在不同的运行环境执行，所以需要有一种机制，能够在函数体内部获得当前的运行环境（context）。所以，this就出现了，它的设计目的就是在函数体内部，指代函数当前的运行环境。 <em>– 阮一峰，JavaScript 教程</em></p>
-</blockquote>
-<ol>
-<li>fn() 里的 <code>this</code> ：非严格模式是全局对象（浏览器下是 <code>window</code>），严格模式下是 <code>undefined</code>。（window.fn()）</li>
-<li>a.b.c.fn() 里的 <code>this</code> 是 a.b.c。</li>
-<li>new fn() 里的 <code>this</code> 就是新生成的实例对象。</li>
-<li>箭头函数里没有 <code>this</code>。在箭头函数里使用的 <code>this</code> 绑定了外层函数的 <code>this</code>。</li>
-</ol>
-<h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
-<li><a href="https://wangdoc.com/javascript/oop/this.html" target="_blank" rel="noopener">this 关键字</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/23804247" target="_blank" rel="noopener">this 的值到底是什么？一次说清楚</a></li>
-<li><a href="https://zhuanlan.zhihu.com/p/23987456" target="_blank" rel="noopener">JS 的 new 到底是干什么的？</a></li>
-<li><a href="https://yuchengkai.cn/docs/zh/frontend/#this" target="_blank" rel="noopener">InterviewMap</a></li>
+        <ul>
+<li><code>scrollWidth</code>: 内容区的实际宽度。</li>
+<li><code>clientWidth</code>: 可视区的宽度，不包含滚动条、边框。</li>
+<li><code>offsetWidth</code>: 可视区的宽度，包含滚动条、边框。</li>
 </ul>
-<h3 id="相关链接"><a href="#相关链接" class="headerlink" title="相关链接"></a>相关链接</h3><ul>
-<li><a href="https://hehe1111.github.io/2018/03/14/%E7%BB%91%E5%AE%9Athis/" target="_blank" rel="noopener">绑定this</a></li>
+<p><code>offsetWidth</code> &gt; <code>clientWidth</code></p>
+<p>没有滚动条时，<code>scrollWidth</code> === <code>clientWidth</code><br>有，则 <code>scrollWidth</code> &gt; <code>clientWidth</code></p>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
+<li><a href="https://blog.csdn.net/lzding/article/details/46371609" target="_blank" rel="noopener">图解offsetWidth, clientWidth, scrollWidth, innerWidth, outerWidth, pageXOffset等</a></li>
+<li><a href="https://blog.csdn.net/mr_fzz/article/details/53033877" target="_blank" rel="noopener">详解clientWidth，scrollWidth，offsetWidth,innerWidth的区别</a></li>
+<li><a href="http://www.cnblogs.com/fullhouse/archive/2012/01/16/2324131.html" target="_blank" rel="noopener">JS中关于clientWidth offsetWidth scrollWidth 等的含义</a></li>
+<li><a href="https://www.cnblogs.com/kongxianghai/p/4192032.html" target="_blank" rel="noopener">web前端学习笔记—scrollWidth,clientWidth,offsetWidth的区别</a></li>
 </ul>
 
       
@@ -486,8 +467,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/06/30/JSONP/" rel="next" title="JSONP">
-                <i class="fa fa-chevron-left"></i> JSONP
+              <a href="/2018/07/28/伪数组转成数组/" rel="next" title="伪数组转成数组">
+                <i class="fa fa-chevron-left"></i> 伪数组转成数组
               </a>
             
           </div>
@@ -495,10 +476,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/30/立即执行函数-IIFE/" rel="prev" title="立即执行函数">
-                立即执行函数 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
