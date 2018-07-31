@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="关于闭包">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-25T22:25:14.242Z">
+<meta property="og:updated_time" content="2018-07-31T11:32:58.502Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="闭包及其作用与危害">
 <meta name="twitter:description" content="关于闭包">
@@ -369,7 +369,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-07-26 06:25:14" itemprop="dateModified" datetime="2018-07-26T06:25:14+08:00">2018-07-26</time>
+                <time title="修改时间：2018-07-31 19:32:58" itemprop="dateModified" datetime="2018-07-31T19:32:58+08:00">2018-07-31</time>
               
             
           </span>
@@ -427,6 +427,7 @@
 <h2 id="闭包的作用"><a href="#闭包的作用" class="headerlink" title="闭包的作用"></a>闭包的作用</h2><ul>
 <li>可以读取函数内部的变量</li>
 <li>让这些变量始终保持在内存中，即闭包可以使得它诞生环境一直存在，这也是闭包潜在的危害根源。</li>
+<li>隐藏私有变量与私有方法</li>
 </ul>
 <p>举例：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="string">'这就是闭包'</span></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn2</span>(<span class="params"></span>) </span>&#123; <span class="comment">// fn2 函数可以访问在 fn1 函数里定义的变量 a</span></span><br><span class="line">        <span class="built_in">console</span>.log(a)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp = fn1()</span><br><span class="line">temp() <span class="comment">// '这就是闭包'</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn3</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span> <span class="title">fn4</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">return</span> n += <span class="number">1</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> temp2 = fn3(<span class="number">-1</span>)</span><br><span class="line">temp2() <span class="comment">// 0</span></span><br><span class="line">temp2() <span class="comment">// 1</span></span><br><span class="line">temp2() <span class="comment">// 2</span></span><br><span class="line">temp2() <span class="comment">// 3</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// 闭包使变量 n 一直存在于内存中</span></span><br><span class="line"><span class="comment">// 每次 temp2() 调用都是在前一次调用的基础基础上进行计算</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
@@ -748,7 +749,7 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">chen</span>
-  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 25.8k 字</span>
+  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 26.2k 字</span>
 
   
 

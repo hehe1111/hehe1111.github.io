@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="简记如何预防 XSS/CSRF 攻击">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-07-30T23:46:25.145Z">
+<meta property="og:updated_time" content="2018-07-31T13:11:31.527Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="安全">
 <meta name="twitter:description" content="简记如何预防 XSS/CSRF 攻击">
@@ -352,7 +352,7 @@
                 
               
 
-              <time title="创建时间：2018-07-31 08:00:17 / 修改时间：07:46:25" itemprop="dateCreated datePublished" datetime="2018-07-31T08:00:17+08:00">2018-07-31</time>
+              <time title="创建时间：2018-07-31 08:00:17 / 修改时间：21:11:31" itemprop="dateCreated datePublished" datetime="2018-07-31T08:00:17+08:00">2018-07-31</time>
             
 
             
@@ -413,7 +413,7 @@
         <h2 id="XSS"><a href="#XSS" class="headerlink" title="XSS"></a>XSS</h2><p>XSS(Cross-site scripting，跨站脚本)</p>
 <ol>
 <li>在 JavaScript 中不要使用 <code>innerHTML</code> 属性，改用 <code>innerText</code> 或 <code>textContent</code> 属性。</li>
-<li>对特定字符进行转义。如<ul>
+<li>对特定字符进行转义（转成 HTML 实体）。如<ul>
 <li>把 <code>&lt;</code> 转成 <code>&amp;lt;</code></li>
 <li>把 <code>&gt;</code> 转成 <code>&amp;gt;</code></li>
 <li>把 <code>&amp;</code> 转成 <code>&amp;amp;</code></li>
@@ -430,8 +430,16 @@
 <li>缺点：依赖于浏览器发的 <code>referer</code>。<code>referer</code> 还是存在被篡改的可能性。</li>
 </ul>
 </li>
-<li>验证 Token。由服务器生成，附在表单上。用户提交表单时也一并提交。攻击者通过 <code>document.cookie</code> 无法拿到第三方的内容（跨域限制），故不能发起 CSRF 攻击。</li>
+<li>验证 Token。（如：结合表单与 cookie）<ul>
+<li>Token 是由<strong>服务器生成</strong>的一个<strong>随机数</strong>，附在表单里（如：<code>&lt;input type=&quot;hidden&quot; name=&quot;_csrf_token&quot; value=&quot;xxx&quot;&gt;</code>）。</li>
+<li>服务器同时在响应头里通过 <code>setCookie</code> 字段，将 Token 放在 cookie 里。</li>
+<li>表单与 cookie 随响应一起传到浏览器。浏览器接收响应，除了渲染表单，也会将服务器下发的 cookie 保存在本地，下一次发起请求（ <code>GET</code>/<code>POST</code>/<code>PUT</code>/<code>PATCH</code>/<code>DELETE</code> 等）时，会自动带上 cookie。</li>
+<li>用户提交表单（浏览器会发起请求）时，由于会自动将表单里所有的 <code>&lt;input&gt;</code> 提交到服务器，因此 Token 也会附在请求里被一并提交。</li>
+<li>服务器接收到请求后，会去获取提交表单里的 Token ，也会从 cookie（随请求一起发到服务器的）里去获取 Token。服务器通过比较“表单 Token” 与 “cookie Token” 是否一致，来判断该请求是否合法。</li>
 </ul>
+</li>
+</ul>
+<h3 id="通过-cookie-保存-Token-的缺点："><a href="#通过-cookie-保存-Token-的缺点：" class="headerlink" title="通过 cookie 保存 Token 的缺点："></a>通过 cookie 保存 Token 的缺点：</h3><p>如果在浏览器多个标签页里打开相同的表单页面，那么在各标签页之间，表单 Token 是不一致的。这会导致用户最新打开的表单在提交后，服务器能判断为合法请求，但是其他更早打开的表单在提交后，却会被判定为异常。因此，一般将 Token 放在 session 里，即结合表单与 session。</p>
 <h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ul>
 <li><a href="https://www.wikiwand.com/en/Cross-site_scripting" target="_blank" rel="noopener">Cross-site scripting</a></li>
 <li><a href="https://www.wikiwand.com/en/Cross-site_request_forgery" target="_blank" rel="noopener">Cross-site request forgery</a></li>
@@ -441,6 +449,7 @@
 <li><a href="http://blog.knownsec.com/2015/03/jsonp_security_technic/" target="_blank" rel="noopener">JSONP 安全攻防技术</a></li>
 <li><a href="https://juejin.im/post/5a6320d56fb9a01cb64ee191" target="_blank" rel="noopener">我知道的跨域与安全</a></li>
 <li><a href="http://www.cnblogs.com/siqi/archive/2012/11/19/2777224.html" target="_blank" rel="noopener">XSS CSRF 攻击</a></li>
+<li><a href="https://zhuanlan.zhihu.com/p/22521378" target="_blank" rel="noopener">「每日一题」CSRF 是什么？</a></li>
 </ul>
 
       
@@ -747,7 +756,7 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">chen</span>
-  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 25.8k 字</span>
+  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 26.2k 字</span>
 
   
 
