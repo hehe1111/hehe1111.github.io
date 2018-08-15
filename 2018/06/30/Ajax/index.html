@@ -121,7 +121,7 @@
 <meta property="og:site_name" content="chen - Hexo Blog">
 <meta property="og:description" content="Ajax">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-08-14T07:39:59.259Z">
+<meta property="og:updated_time" content="2018-08-15T05:50:44.564Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Ajax">
 <meta name="twitter:description" content="Ajax">
@@ -369,7 +369,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-08-14 15:39:59" itemprop="dateModified" datetime="2018-08-14T15:39:59+08:00">2018-08-14</time>
+                <time title="修改时间：2018-08-15 13:50:44" itemprop="dateModified" datetime="2018-08-15T13:50:44+08:00">2018-08-15</time>
               
             
           </span>
@@ -430,6 +430,17 @@
 <li>CORS（Cross-Origin Resource Sharing）：服务器端会检查浏览器发来的请求，如果服务器允许请求头里的 <code>origin</code> 字段的网址访问，则会在返回的响应头里添加 <code>Access-Control-Allow-Origin</code> 字段，该字段的值与请求头里的 <code>origin</code> 字段的值相同（当然还有其他字段）。</li>
 <li>WebSocket</li>
 </ol>
+<h3 id="使用-Ajax-（Chrome-浏览器环境下）获取小说章节内容"><a href="#使用-Ajax-（Chrome-浏览器环境下）获取小说章节内容" class="headerlink" title="使用 Ajax （Chrome 浏览器环境下）获取小说章节内容"></a>使用 Ajax （Chrome 浏览器环境下）获取小说章节内容</h3><ul>
+<li><code>TextDecoder</code> 对象由浏览器提供</li>
+<li>参数<ul>
+<li><code>url</code> 指 <code>files</code> 对象里的键</li>
+<li><code>files[url]</code> 指 <code>files</code> 对象里的值，即为将要获取的 <code>url</code> 对应文件的编码方式</li>
+</ul>
+</li>
+<li>获取到字符串后，先<strong>将字符串转为 HTML</strong>，方便后续获取小说章节内容</li>
+<li>受同源政策限制</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> url = prompt(<span class="string">'请输入小说章节的链接：'</span>, <span class="string">''</span>)</span><br><span class="line"><span class="keyword">let</span> encoding = prompt(<span class="string">'请指定编码方式：'</span>, <span class="string">''</span>)</span><br><span class="line"><span class="keyword">let</span> decodedString = <span class="string">''</span> <span class="comment">// 获得的、经转码后的目标字符串</span></span><br><span class="line"><span class="keyword">let</span> files = &#123;&#125;</span><br><span class="line">files[url] = encoding || <span class="string">'gbk'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!url) &#123; alert(<span class="string">'输入的小说章节链接不能为空。'</span>) &#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (<span class="string">'TextDecoder'</span> <span class="keyword">in</span> <span class="built_in">window</span>) &#123;</span><br><span class="line">    <span class="built_in">Object</span>.keys(files).forEach(<span class="function"><span class="keyword">function</span>(<span class="params">url</span>) </span>&#123;</span><br><span class="line">        fetchAndDecode(url, files[url])</span><br><span class="line">            .then(<span class="function"><span class="keyword">function</span> (<span class="params">string</span>) </span>&#123;</span><br><span class="line">                decodedString = string</span><br><span class="line">                <span class="built_in">console</span>.log(parseAndGetContent(decodedString))</span><br><span class="line">            &#125;, <span class="function"><span class="keyword">function</span> (<span class="params">error</span>) </span>&#123;</span><br><span class="line">                <span class="built_in">console</span>.log(error)</span><br><span class="line">            &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.error(<span class="string">'Your browser does not support the Encoding API.'</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fetchAndDecode</span>(<span class="params">url, encoding</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="keyword">function</span> (<span class="params">resolve, reject</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> xhr = <span class="keyword">new</span> XMLHttpRequest()</span><br><span class="line">        xhr.open(<span class="string">'GET'</span>, url)</span><br><span class="line">        xhr.responseType = <span class="string">'arraybuffer'</span></span><br><span class="line">        xhr.onload = <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.status === <span class="number">200</span>) &#123;</span><br><span class="line">                <span class="keyword">let</span> dataView = <span class="keyword">new</span> <span class="built_in">DataView</span>(<span class="keyword">this</span>.response)</span><br><span class="line">                <span class="keyword">let</span> decoder = <span class="keyword">new</span> TextDecoder(encoding)</span><br><span class="line">                resolve(decoder.decode(dataView))</span><br><span class="line">            &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                reject(<span class="string">'Error while requesting'</span>, url, <span class="keyword">this</span>)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        xhr.send()</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">parseAndGetContent</span>(<span class="params">string</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> parser = <span class="keyword">new</span> DOMParser()</span><br><span class="line">    <span class="keyword">return</span> parser.parseFromString(string, <span class="string">"text/html"</span>) <span class="comment">// String to HTML</span></span><br><span class="line">        .getElementById(<span class="string">"content"</span>)</span><br><span class="line">        .innerHTML <span class="comment">// 小说章节内容</span></span><br><span class="line">        .replace(<span class="regexp">/[&amp;nbsp;]*/g</span>, <span class="string">''</span>) <span class="comment">// 处理不必要的空格与换行</span></span><br><span class="line">        .replace(<span class="regexp">/[\&lt;br\&gt;]&#123;1,2&#125;/g</span>, <span class="string">'\n'</span>)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h3 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h3><ul>
 <li><a href="https://segmentfault.com/a/1190000006095018" target="_blank" rel="noopener">浏览器跨域方法与基于 Fetch 的 Web 请求最佳实践</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Fetch_API/Using_Fetch" target="_blank" rel="noopener">使用 Fetch</a></li>
@@ -442,6 +453,9 @@
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Glossary/CORS" target="_blank" rel="noopener">CORS</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Basics_of_HTTP/MIME_types" target="_blank" rel="noopener">MIME 类型</a></li>
 <li><a href="https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Headers/Content-Type" target="_blank" rel="noopener">Content-Type</a></li>
+<li><a href="http://www.bkjia.com/webzh/958444.html" target="_blank" rel="noopener">浏览器内javascript 转换gbk文本到UTF8编码(chrome, firefox only)，utf8chrome</a></li>
+<li><a href="https://www.dotnettricks.com/learn/javascript/convert-string-to-xml-and-xml-to-string-using-javascript" target="_blank" rel="noopener">Convert string to xml and xml to string using javascript</a></li>
+<li><a href="https://stackoverflow.com/questions/19812510/converting-html-element-to-string-in-javascript-jquery" target="_blank" rel="noopener">Converting HTML element to string in JavaScript / JQuery</a></li>
 </ul>
 
       
@@ -752,7 +766,7 @@
     <i class="fa fa-user"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">chen</span>
-  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 26.4k 字</span>
+  <span class="post-count">&nbsp;&nbsp;|&nbsp;&nbsp;博客全站共 26.8k 字</span>
 
   
 
