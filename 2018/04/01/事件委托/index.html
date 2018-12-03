@@ -113,18 +113,18 @@
 
 
 
-  <meta name="description" content="事件委托">
+  <meta name="description" content="事件委托/代理">
 <meta name="keywords" content="JS">
 <meta property="og:type" content="article">
 <meta property="og:title" content="事件委托">
 <meta property="og:url" content="http://yoursite.com/2018/04/01/事件委托/index.html">
 <meta property="og:site_name" content="chen - Hexo Blog">
-<meta property="og:description" content="事件委托">
+<meta property="og:description" content="事件委托/代理">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2018-06-12T13:42:10.921Z">
+<meta property="og:updated_time" content="2018-12-03T14:52:18.432Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="事件委托">
-<meta name="twitter:description" content="事件委托">
+<meta name="twitter:description" content="事件委托/代理">
 
 
 
@@ -369,7 +369,7 @@
                 
                   <span class="post-meta-item-text">更新于</span>
                 
-                <time title="修改时间：2018-06-12 21:42:10" itemprop="dateModified" datetime="2018-06-12T21:42:10+08:00">2018-06-12</time>
+                <time title="修改时间：2018-12-03 22:52:18" itemprop="dateModified" datetime="2018-12-03T22:52:18+08:00">2018-12-03</time>
               
             
           </span>
@@ -406,7 +406,7 @@
           
 
           
-              <div class="post-description">事件委托</div>
+              <div class="post-description">事件委托/代理</div>
           
 
         </div>
@@ -422,7 +422,7 @@
       
 
       
-        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">on</span>(<span class="params">element, eventType, selector, handler</span>) </span>&#123;</span><br><span class="line">  element.addEventListener(eventType, e =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> el = e.target</span><br><span class="line">    <span class="keyword">while</span> (!el.matches(selector)) &#123;</span><br><span class="line">      <span class="keyword">if</span> (el === element) &#123;</span><br><span class="line">        el = <span class="literal">null</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">      el = el.parentNode</span><br><span class="line">    &#125;</span><br><span class="line">    el &amp;&amp; handler.call(el, e, el)</span><br><span class="line">  &#125;)</span><br><span class="line">  <span class="keyword">return</span> element</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">on</span> (<span class="params">parent, eventType, selector, callback</span>) </span>&#123;</span><br><span class="line">  parent.addEventListener(eventType, (event) =&gt; &#123;</span><br><span class="line">    <span class="keyword">let</span> el = event.target</span><br><span class="line">    <span class="keyword">while</span> (!el.matches(selector)) &#123;</span><br><span class="line">      <span class="keyword">if</span> (el === parent) &#123;</span><br><span class="line">        el = <span class="literal">null</span></span><br><span class="line">        <span class="keyword">break</span></span><br><span class="line">      &#125;</span><br><span class="line">      el = el.parentNode</span><br><span class="line">    &#125;</span><br><span class="line">    el &amp;&amp; callback.call(el, event)</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// let foo = (event) =&gt; &#123; console.log(event.target) &#125;</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// on(buttons, 'click', 'button', foo)</span></span><br></pre></td></tr></table></figure>
 <p>监听子元素，事件监听器不直接绑在子元素上，而是绑在父元素上。</p>
 <p>优点：</p>
 <ul>
